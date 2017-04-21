@@ -1,0 +1,6 @@
+var _elm_lang$elm_architecture_tutorial$Main$markdown = '\n\n# This is Markdown\n\n[Markdown](http://daringfireball.net/projects/markdown/) lets you\nwrite content in a really natural way.\n\n  * You can have lists, like this one\n  * Make things **bold** or *italic*\n  * Embed snippets of `code`\n  * Create [links](/)\n  * ...\n\nThe [elm-markdown][] package parses all this content, allowing you\nto easily generate blocks of `Element` or `Html`.\n\n[elm-markdown]: http://package.elm-lang.org/packages/evancz/elm-markdown/latest\n\n';
+var _elm_lang$elm_architecture_tutorial$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
+	A2(
+		_evancz$elm_markdown$Markdown$toHtml,
+		{ctor: '[]'},
+		_elm_lang$elm_architecture_tutorial$Main$markdown));
