@@ -5,38 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Interactive webpage that details the environmental impact of industrial agriculture">
-    <meta name="author" content="Walker Sorlie">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
     <title>Industrial Agriculture and the Meat Industry</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/home/walker/Dropbox/CS_341/final_project/webpage/gh-pages/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/home/walker/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/home/walker/Dropbox/CS_341/final_project/webpage/gh-pages/homepage.css" rel="stylesheet">
+    <link href="homepage.css" rel="stylesheet">
 
-    <script src="/home/walker/Dropbox/CS_341/final_project/webpage/gh-pages/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/home/walker/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
   </head>
 
   <body>
     <div class="container">
       <div class="starter-template">
         <h1>Industrial Agriculture and the Meat Industry</h1>
-        <p class="lead"> This is my webpage. I will generate some html text within my Elm files and some in just this html file.
-          <br>I am going to use Bootstap to make the page look pretty.</p>
+        <p class="lead">Discussion of industrial agriculture.
+          <br> Will use Bootstrap.<br>
+          <br><div id="slider-here"></div>
+        </p>
       </div>
 
     </div><!-- /.container -->
 
+    <script src="elm-slider.js"></script>
+    <script>
+      Elm.Slider.embed(document.getElementById("slider-here"));
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/home/walker/Dropbox/CS_341/final_project/webpage/gh-pages/bootstrap/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/home/walker/Dropbox/CS_341/final_project/webpage/gh-pages/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/home/walker/bootstrap/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/home/walker/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/home/walker/Dropbox/CS_341/final_project/webpage/gh-pages/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/home/walker/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
