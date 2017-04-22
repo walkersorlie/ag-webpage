@@ -1,3 +1,9 @@
+{- This is a slider implementation I found online.
+  This will be a good basis for my specific slider implementation.
+  I will have to adapt it to my specific needs and add on to it,
+  but this is a good starting point.
+-}
+
 module Slider exposing (..)
 
 import Html exposing (Attribute, div, text, input)
