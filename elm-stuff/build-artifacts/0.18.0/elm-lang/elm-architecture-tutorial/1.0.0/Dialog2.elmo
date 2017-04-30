@@ -1,0 +1,135 @@
+var _elm_lang$elm_architecture_tutorial$Dialog2$makePar = function (words) {
+	return A2(
+		_elm_lang$html$Html$p,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(words),
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss = function (kiloOfWhiteMeat) {
+	return _elm_lang$core$Basics$round(
+		(((_elm_lang$core$Basics$toFloat(kiloOfWhiteMeat) / 30.44) * 2393) * 365) * (17.8 / 2393));
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcPounds = function (kiloToPound) {
+	return _elm_lang$core$Basics$round(
+		_elm_lang$core$Basics$toFloat(kiloToPound) * 2.20462);
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcVal = function (sliderVal) {
+	return _elm_lang$elm_architecture_tutorial$Dialog2$makePar(
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			'For white meat, if you eat ',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(sliderVal),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					' kilogram(s) (approximately ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(
+							_elm_lang$elm_architecture_tutorial$Dialog2$calcPounds(sliderVal)),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' pounds) a month, your yearly white meat C02e production would be ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss(sliderVal)),
+								' kg C02e.')))))));
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$bodyUpdate = function (model) {
+	var val = _elm_lang$elm_architecture_tutorial$Dialog2$calcVal(model.currentVal);
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: val,
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$update = F2(
+	function (num, model) {
+		var _p0 = num;
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				currentVal: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					_elm_lang$core$String$toInt(_p0._0))
+			});
+	});
+var _elm_lang$elm_architecture_tutorial$Dialog2$initialModel = {currentVal: 0};
+var _elm_lang$elm_architecture_tutorial$Dialog2$Model = function (a) {
+	return {currentVal: a};
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$ChangeSlider = function (a) {
+	return {ctor: 'ChangeSlider', _0: a};
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$elm_architecture_tutorial$Dialog2$bodyUpdate(model),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('range'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$min('0'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$max('50'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$value(
+													_elm_lang$core$Basics$toString(model.currentVal)),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Dialog2$ChangeSlider),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.currentVal)),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$main = _elm_lang$html$Html$beginnerProgram(
+	{
+		model: {currentVal: 0},
+		view: _elm_lang$elm_architecture_tutorial$Dialog2$view,
+		update: _elm_lang$elm_architecture_tutorial$Dialog2$update
+	})();

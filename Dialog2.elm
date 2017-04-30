@@ -1,6 +1,5 @@
-module Dialog exposing (main)
+module Dialog2 exposing (main)
 
-import IntroDialog exposing (view)
 import Html exposing (..)
 import Html.Attributes as H exposing (..)
 import Html.Events exposing (on, onInput)
@@ -48,9 +47,8 @@ update num model =
 view : Model -> Html Msg
 view model =
   div []
-    [ IntroDialog.view
-    , hr [] []
-    , bodyUpdate model -- bodyText    -- displays the text before the slider
+    [ hr [] []
+    , bodyUpdate model    -- displays the text before the slider
     , div []
       [ input
         [ type_ "range"
@@ -64,15 +62,14 @@ view model =
     ]
 
 {-
-  Red meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-  Kilogram to pound is 'x * 2.20462'
-  Average days a month is 30.44
+  White meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+  106.85
 
   Include info about how it's hard to get an exact number
 -}
 calcVal : Int -> Html msg
 calcVal sliderVal =
-  makePar ("For red meat, if you eat " ++ toString (sliderVal) ++ " kilogram(s) (approximately " ++ toString (calcPounds sliderVal) ++ " pounds) a month, your yearly red meat C02e production would be " ++ toString (calcRedMeatEmiss sliderVal) ++ " kg C02e.")
+  makePar ("For white meat, if you eat " ++ toString (sliderVal) ++ " kilogram(s) (approximately " ++ toString (calcPounds sliderVal) ++ " pounds) a month, your yearly white meat C02e production would be " ++ toString (calcWhiteMeatEmiss sliderVal) ++ " kg C02e.")
 
 
 {-
@@ -84,11 +81,11 @@ calcPounds kiloToPound =
 
 
 {-
-  This calculates the carbon emission of red meat
+  Calculates the carbon emission of white meat
 -}
-calcRedMeatEmiss : Int -> Int
-calcRedMeatEmiss kiloOfMeat =
-  round ((toFloat kiloOfMeat / 30.44) * 1435 * 365 * (27/1435))
+calcWhiteMeatEmiss : Int -> Int
+calcWhiteMeatEmiss kiloOfWhiteMeat =
+  round ((toFloat kiloOfWhiteMeat / 30.44) * 2393 * 365 * (17.8/2393))
 
 
 {-

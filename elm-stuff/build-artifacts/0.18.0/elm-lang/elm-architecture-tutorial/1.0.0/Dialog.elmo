@@ -8,15 +8,37 @@ var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
 			_1: {ctor: '[]'}
 		});
 };
+var _elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss = function (kiloOfMeat) {
+	return _elm_lang$core$Basics$round(
+		(((_elm_lang$core$Basics$toFloat(kiloOfMeat) / 30.44) * 1435) * 365) * (27 / 1435));
+};
+var _elm_lang$elm_architecture_tutorial$Dialog$calcPounds = function (kiloToPound) {
+	return _elm_lang$core$Basics$round(
+		_elm_lang$core$Basics$toFloat(kiloToPound) * 2.20462);
+};
 var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
 	return _elm_lang$elm_architecture_tutorial$Dialog$makePar(
 		A2(
 			_elm_lang$core$Basics_ops['++'],
-			'This is the text here. This number: ',
+			'For red meat, if you eat ',
 			A2(
 				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(5 + sliderVal),
-				' changes with the slider.')));
+				_elm_lang$core$Basics$toString(sliderVal),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					' kilogram(s) (approximately ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(
+							_elm_lang$elm_architecture_tutorial$Dialog$calcPounds(sliderVal)),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' pounds) a month, your yearly red meat C02e production would be ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss(sliderVal)),
+								' kg C02e.')))))));
 };
 var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
 	var val = _elm_lang$elm_architecture_tutorial$Dialog$calcVal(model.currentVal);
@@ -26,24 +48,6 @@ var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
 		{
 			ctor: '::',
 			_0: val,
-			_1: {ctor: '[]'}
-		});
-};
-var _elm_lang$elm_architecture_tutorial$Dialog$bodyText = function (model) {
-	var val = _elm_lang$elm_architecture_tutorial$Dialog$calcVal(model.currentVal);
-	return A2(
-		_elm_lang$html$Html$div,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$p,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('Changed text here. Equations to come.'),
-					_1: {ctor: '[]'}
-				}),
 			_1: {ctor: '[]'}
 		});
 };

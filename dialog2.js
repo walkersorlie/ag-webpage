@@ -8145,23 +8145,6 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
-var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
-	_elm_lang$html$Html$div,
-	{ctor: '[]'},
-	{
-		ctor: '::',
-		_0: A2(
-			_elm_lang$html$Html$p,
-			{ctor: '[]'},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('I will display all intro info here. This stuff will not be affected by the slider'),
-				_1: {ctor: '[]'}
-			}),
-		_1: {ctor: '[]'}
-	});
-var _elm_lang$elm_architecture_tutorial$IntroDialog$view = _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg;
-
 var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode$field, 'keyCode', _elm_lang$core$Json_Decode$int);
 var _elm_lang$html$Html_Events$targetChecked = A2(
 	_elm_lang$core$Json_Decode$at,
@@ -8277,7 +8260,7 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$makePar = function (words) {
 	return A2(
 		_elm_lang$html$Html$p,
 		{ctor: '[]'},
@@ -8287,19 +8270,19 @@ var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss = function (kiloOfMeat) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss = function (kiloOfWhiteMeat) {
 	return _elm_lang$core$Basics$round(
-		(((_elm_lang$core$Basics$toFloat(kiloOfMeat) / 30.44) * 1435) * 365) * (27 / 1435));
+		(((_elm_lang$core$Basics$toFloat(kiloOfWhiteMeat) / 30.44) * 2393) * 365) * (17.8 / 2393));
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcPounds = function (kiloToPound) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcPounds = function (kiloToPound) {
 	return _elm_lang$core$Basics$round(
 		_elm_lang$core$Basics$toFloat(kiloToPound) * 2.20462);
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
-	return _elm_lang$elm_architecture_tutorial$Dialog$makePar(
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcVal = function (sliderVal) {
+	return _elm_lang$elm_architecture_tutorial$Dialog2$makePar(
 		A2(
 			_elm_lang$core$Basics_ops['++'],
-			'For red meat, if you eat ',
+			'For white meat, if you eat ',
 			A2(
 				_elm_lang$core$Basics_ops['++'],
 				_elm_lang$core$Basics$toString(sliderVal),
@@ -8309,18 +8292,18 @@ var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						_elm_lang$core$Basics$toString(
-							_elm_lang$elm_architecture_tutorial$Dialog$calcPounds(sliderVal)),
+							_elm_lang$elm_architecture_tutorial$Dialog2$calcPounds(sliderVal)),
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							' pounds) a month, your yearly red meat C02e production would be ',
+							' pounds) a month, your yearly white meat C02e production would be ',
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								_elm_lang$core$Basics$toString(
-									_elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss(sliderVal)),
+									_elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss(sliderVal)),
 								' kg C02e.')))))));
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
-	var val = _elm_lang$elm_architecture_tutorial$Dialog$calcVal(model.currentVal);
+var _elm_lang$elm_architecture_tutorial$Dialog2$bodyUpdate = function (model) {
+	var val = _elm_lang$elm_architecture_tutorial$Dialog2$calcVal(model.currentVal);
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -8330,7 +8313,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
+var _elm_lang$elm_architecture_tutorial$Dialog2$update = F2(
 	function (num, model) {
 		var _p0 = num;
 		return _elm_lang$core$Native_Utils.update(
@@ -8342,85 +8325,81 @@ var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
 					_elm_lang$core$String$toInt(_p0._0))
 			});
 	});
-var _elm_lang$elm_architecture_tutorial$Dialog$initialModel = {currentVal: 0};
-var _elm_lang$elm_architecture_tutorial$Dialog$Model = function (a) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$initialModel = {currentVal: 0};
+var _elm_lang$elm_architecture_tutorial$Dialog2$Model = function (a) {
 	return {currentVal: a};
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$ChangeSlider = function (a) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$ChangeSlider = function (a) {
 	return {ctor: 'ChangeSlider', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$elm_architecture_tutorial$IntroDialog$view,
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
 			_1: {
 				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$hr,
-					{ctor: '[]'},
-					{ctor: '[]'}),
+				_0: _elm_lang$elm_architecture_tutorial$Dialog2$bodyUpdate(model),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate(model),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$input,
-									{
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('range'),
+									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$type_('range'),
+										_0: _elm_lang$html$Html_Attributes$min('0'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$min('0'),
+											_0: _elm_lang$html$Html_Attributes$max('50'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$max('50'),
+												_0: _elm_lang$html$Html_Attributes$value(
+													_elm_lang$core$Basics$toString(model.currentVal)),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$value(
-														_elm_lang$core$Basics$toString(model.currentVal)),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Dialog$ChangeSlider),
-														_1: {ctor: '[]'}
-													}
+													_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Dialog2$ChangeSlider),
+													_1: {ctor: '[]'}
 												}
 											}
 										}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(
-										_elm_lang$core$Basics$toString(model.currentVal)),
-									_1: {ctor: '[]'}
-								}
-							}),
-						_1: {ctor: '[]'}
-					}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.currentVal)),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {ctor: '[]'}
 				}
 			}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$main = _elm_lang$html$Html$beginnerProgram(
+var _elm_lang$elm_architecture_tutorial$Dialog2$main = _elm_lang$html$Html$beginnerProgram(
 	{
 		model: {currentVal: 0},
-		view: _elm_lang$elm_architecture_tutorial$Dialog$view,
-		update: _elm_lang$elm_architecture_tutorial$Dialog$update
+		view: _elm_lang$elm_architecture_tutorial$Dialog2$view,
+		update: _elm_lang$elm_architecture_tutorial$Dialog2$update
 	})();
 
 var Elm = {};
-Elm['Dialog'] = Elm['Dialog'] || {};
-if (typeof _elm_lang$elm_architecture_tutorial$Dialog$main !== 'undefined') {
-    _elm_lang$elm_architecture_tutorial$Dialog$main(Elm['Dialog'], 'Dialog', undefined);
+Elm['Dialog2'] = Elm['Dialog2'] || {};
+if (typeof _elm_lang$elm_architecture_tutorial$Dialog2$main !== 'undefined') {
+    _elm_lang$elm_architecture_tutorial$Dialog2$main(Elm['Dialog2'], 'Dialog2', undefined);
 }
 
 if (typeof define === "function" && define['amd'])
