@@ -63,29 +63,42 @@ view model =
 
 {-
   White meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-  106.85
 
   Include info about how it's hard to get an exact number
+  Combined turkey with chicken meat
 -}
 calcVal : Int -> Html msg
 calcVal sliderVal =
-  makePar ("For white meat, if you eat " ++ toString (sliderVal) ++ " kilogram(s) (approximately " ++ toString (calcPounds sliderVal) ++ " pounds) a month, your yearly white meat C02e production would be " ++ toString (calcWhiteMeatEmiss sliderVal) ++ " kg C02e.")
+  div []
+    [ makePar ("For white meat, if you eat " ++ toString sliderVal ++ " pound(s) a month, your yearly white meat C02e emissions would be " ++ toString (calcWhiteMeatEmiss sliderVal) ++ " lbs C02e, or approximately " ++ toString (calcTons sliderVal) ++ " tons C02e per year.")
+    , sub [] [ text "(The total emissions includes production emissions and post-production emissions.)" ]
+    ]
 
 
 {-
-  Calculates the total pounds in relation to kilograms
+  Converts pounds to kilograms
+  Rounds to the nearest whole number
 -}
-calcPounds : Int -> Int
-calcPounds kiloToPound =
-  round ((toFloat kiloToPound * 2.20462))
+calcKilos : Int -> Float
+calcKilos poundToKilo  =
+  (toFloat poundToKilo / 0.453592)
 
 
 {-
   Calculates the carbon emission of white meat
 -}
 calcWhiteMeatEmiss : Int -> Int
-calcWhiteMeatEmiss kiloOfWhiteMeat =
-  round ((toFloat kiloOfWhiteMeat / 30.44) * 2393 * 365 * (17.8/2393))
+calcWhiteMeatEmiss poundOfWhiteMeat =
+  round (((calcKilos poundOfWhiteMeat / 30.44) * 1716.5 * 365 * (17.8/1716.5)) * 2.20462)
+
+
+{-
+  Converts pounds to tons
+  Rounds to the nearest whole number
+-}
+calcTons : Int -> Int
+calcTons tons =
+  round ((toFloat (calcWhiteMeatEmiss tons)) * 0.0005)
 
 
 {-

@@ -8,9 +8,20 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 			{ctor: '[]'},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('I will display all intro info here. This stuff will not be affected by the slider'),
+				_0: _elm_lang$html$Html$text('I will display all intro info here. This stuff will not be affected by the slider.'),
 				_1: {ctor: '[]'}
 			}),
-		_1: {ctor: '[]'}
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$p,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('All numbers are rounded to the nearest whole number.'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		}
 	});
 var _elm_lang$elm_architecture_tutorial$IntroDialog$view = _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg;

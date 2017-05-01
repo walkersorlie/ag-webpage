@@ -50,7 +50,7 @@ view model =
   div []
     [ IntroDialog.view
     , hr [] []
-    , bodyUpdate model -- bodyText    -- displays the text before the slider
+    , bodyUpdate model 
     , div []
       [ input
         [ type_ "range"
@@ -72,23 +72,38 @@ view model =
 -}
 calcVal : Int -> Html msg
 calcVal sliderVal =
-  makePar ("For red meat, if you eat " ++ toString (sliderVal) ++ " kilogram(s) (approximately " ++ toString (calcPounds sliderVal) ++ " pounds) a month, your yearly red meat C02e production would be " ++ toString (calcRedMeatEmiss sliderVal) ++ " kg C02e.")
+  div []
+    [ makePar ("For red meat, if you eat " ++ toString sliderVal ++ " pound(s) a month, your yearly red meat C02e emissions would be " ++ toString (calcRedMeatEmiss sliderVal) ++ " lbs C02e, or approximately " ++ toString (calcTons sliderVal) ++ " tons C02e per year.")
+    , sub [] [ text "(The total emissions includes production emissions and post-production emissions.)" ]
+    ]
+
 
 
 {-
-  Calculates the total pounds in relation to kilograms
+  Converts pounds to kilograms
+  Rounds to the nearest whole number
 -}
-calcPounds : Int -> Int
-calcPounds kiloToPound =
-  round ((toFloat kiloToPound * 2.20462))
+calcKilos : Int -> Float
+calcKilos poundToKilo  =
+  (toFloat poundToKilo / 0.453592)
 
 
 {-
   This calculates the carbon emission of red meat
+  Returns the total in pounds
 -}
 calcRedMeatEmiss : Int -> Int
-calcRedMeatEmiss kiloOfMeat =
-  round ((toFloat kiloOfMeat / 30.44) * 1435 * 365 * (27/1435))
+calcRedMeatEmiss poundOfMeat =
+  round (((calcKilos (poundOfMeat) / 30.44) * 1435 * 365 * (27/1435)) * 2.20462)
+
+
+{-
+  Converts pounds to tons
+  Rounds to the nearest whole number
+-}
+calcTons : Int -> Int
+calcTons tons =
+  round ((toFloat (calcRedMeatEmiss tons)) * 0.0005)
 
 
 {-

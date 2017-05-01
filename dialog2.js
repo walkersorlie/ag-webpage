@@ -8270,37 +8270,59 @@ var _elm_lang$elm_architecture_tutorial$Dialog2$makePar = function (words) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss = function (kiloOfWhiteMeat) {
-	return _elm_lang$core$Basics$round(
-		(((_elm_lang$core$Basics$toFloat(kiloOfWhiteMeat) / 30.44) * 2393) * 365) * (17.8 / 2393));
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcKilos = function (poundToKilo) {
+	return _elm_lang$core$Basics$toFloat(poundToKilo) / 0.453592;
 };
-var _elm_lang$elm_architecture_tutorial$Dialog2$calcPounds = function (kiloToPound) {
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss = function (poundOfWhiteMeat) {
 	return _elm_lang$core$Basics$round(
-		_elm_lang$core$Basics$toFloat(kiloToPound) * 2.20462);
+		((((_elm_lang$elm_architecture_tutorial$Dialog2$calcKilos(poundOfWhiteMeat) / 30.44) * 1716.5) * 365) * (17.8 / 1716.5)) * 2.20462);
+};
+var _elm_lang$elm_architecture_tutorial$Dialog2$calcTons = function (tons) {
+	return _elm_lang$core$Basics$round(
+		_elm_lang$core$Basics$toFloat(
+			_elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss(tons)) * 5.0e-4);
 };
 var _elm_lang$elm_architecture_tutorial$Dialog2$calcVal = function (sliderVal) {
-	return _elm_lang$elm_architecture_tutorial$Dialog2$makePar(
-		A2(
-			_elm_lang$core$Basics_ops['++'],
-			'For white meat, if you eat ',
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(sliderVal),
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$elm_architecture_tutorial$Dialog2$makePar(
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					' kilogram(s) (approximately ',
+					'For white meat, if you eat ',
 					A2(
 						_elm_lang$core$Basics_ops['++'],
-						_elm_lang$core$Basics$toString(
-							_elm_lang$elm_architecture_tutorial$Dialog2$calcPounds(sliderVal)),
+						_elm_lang$core$Basics$toString(sliderVal),
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							' pounds) a month, your yearly white meat C02e production would be ',
+							' pound(s) a month, your yearly white meat C02e emissions would be ',
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								_elm_lang$core$Basics$toString(
 									_elm_lang$elm_architecture_tutorial$Dialog2$calcWhiteMeatEmiss(sliderVal)),
-								' kg C02e.')))))));
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									' lbs C02e, or approximately ',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(
+											_elm_lang$elm_architecture_tutorial$Dialog2$calcTons(sliderVal)),
+										' tons C02e per year.'))))))),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$sub,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('(The total emissions includes production emissions and post-production emissions.)'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
 };
 var _elm_lang$elm_architecture_tutorial$Dialog2$bodyUpdate = function (model) {
 	var val = _elm_lang$elm_architecture_tutorial$Dialog2$calcVal(model.currentVal);

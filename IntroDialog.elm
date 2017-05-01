@@ -11,5 +11,6 @@ view =
 nonChangeMsg : Html msg
 nonChangeMsg =
   div []
-      [ p [] [ text "I will display all intro info here. This stuff will not be affected by the slider"]
+      [ p [] [ text "I will display all intro info here. This stuff will not be affected by the slider." ]
+      , p [] [ text "All numbers are rounded to the nearest whole number." ]
       ]
