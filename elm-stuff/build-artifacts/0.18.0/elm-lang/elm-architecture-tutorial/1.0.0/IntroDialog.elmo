@@ -50,7 +50,7 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 			{ctor: '[]'},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('The world is currently facing a global convergence of crises, and perhaps the most well-known crises is that of the environment.'),
+				_0: _elm_lang$html$Html$text('The world is currently facing a global convergence of seven different crises, but perhaps the most well-known and public crisis is climate change. The environmental crisis has been slowly growing in magnitude over the last century, mostly in part to the increase in industrial agriculture and other globalized practices. Industrial agriculture promotes monocropping (the farming of one or two main crops on a farming system), pesticide and fertilizer use, fossil fuel consumption, and anthropocentrism (the belief that humans are superiour to nature), all of which have contributed to a state of environmental degredation, the likes of which humanity has not seen. '),
 				_1: {ctor: '[]'}
 			}),
 		_1: {
@@ -86,7 +86,39 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 							}),
 						_1: {ctor: '[]'}
 					}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$hr,
+						{ctor: '[]'},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$p,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Lets take a loot at three different sectors of the animal products industry: meat, dairy, and poultry. These are the three biggest hydrocarbon emitters that fall under the animal product banner.'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$hr,
+								{ctor: '[]'},
+								{ctor: '[]'}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
 			}
 		}
 	});

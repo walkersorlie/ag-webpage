@@ -8448,6 +8448,121 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
+var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode$field, 'keyCode', _elm_lang$core$Json_Decode$int);
+var _elm_lang$html$Html_Events$targetChecked = A2(
+	_elm_lang$core$Json_Decode$at,
+	{
+		ctor: '::',
+		_0: 'target',
+		_1: {
+			ctor: '::',
+			_0: 'checked',
+			_1: {ctor: '[]'}
+		}
+	},
+	_elm_lang$core$Json_Decode$bool);
+var _elm_lang$html$Html_Events$targetValue = A2(
+	_elm_lang$core$Json_Decode$at,
+	{
+		ctor: '::',
+		_0: 'target',
+		_1: {
+			ctor: '::',
+			_0: 'value',
+			_1: {ctor: '[]'}
+		}
+	},
+	_elm_lang$core$Json_Decode$string);
+var _elm_lang$html$Html_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
+var _elm_lang$html$Html_Events$onWithOptions = _elm_lang$virtual_dom$VirtualDom$onWithOptions;
+var _elm_lang$html$Html_Events$on = _elm_lang$virtual_dom$VirtualDom$on;
+var _elm_lang$html$Html_Events$onFocus = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'focus',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onBlur = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'blur',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onSubmitOptions = _elm_lang$core$Native_Utils.update(
+	_elm_lang$html$Html_Events$defaultOptions,
+	{preventDefault: true});
+var _elm_lang$html$Html_Events$onSubmit = function (msg) {
+	return A3(
+		_elm_lang$html$Html_Events$onWithOptions,
+		'submit',
+		_elm_lang$html$Html_Events$onSubmitOptions,
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onCheck = function (tagger) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'change',
+		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetChecked));
+};
+var _elm_lang$html$Html_Events$onInput = function (tagger) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'input',
+		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetValue));
+};
+var _elm_lang$html$Html_Events$onMouseOut = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseout',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseOver = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseover',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseLeave = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseleave',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseEnter = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseenter',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseUp = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseup',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseDown = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mousedown',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onDoubleClick = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'dblclick',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onClick = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'click',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$Options = F2(
+	function (a, b) {
+		return {stopPropagation: a, preventDefault: b};
+	});
+
 var _evancz$elm_graphics$Native_Element = function()
 {
 
@@ -9815,49 +9930,11 @@ var _evancz$elm_graphics$Element$down = _evancz$elm_graphics$Element$DDown;
 var _evancz$elm_graphics$Element$DUp = {ctor: 'DUp'};
 var _evancz$elm_graphics$Element$up = _evancz$elm_graphics$Element$DUp;
 
-var _elm_lang$elm_architecture_tutorial$IntroDialog$myStyle = {
-	typeface: {
-		ctor: '::',
-		_0: 'Times New Roman',
-		_1: {
-			ctor: '::',
-			_0: 'arial',
-			_1: {ctor: '[]'}
-		}
-	},
-	height: _elm_lang$core$Maybe$Just(17),
-	color: _elm_lang$core$Color$black,
-	bold: true,
-	italic: false,
-	line: _elm_lang$core$Maybe$Nothing
-};
-var _elm_lang$elm_architecture_tutorial$IntroDialog$myText = function (string) {
-	return A2(
-		_evancz$elm_graphics$Text$style,
-		_elm_lang$elm_architecture_tutorial$IntroDialog$myStyle,
-		_evancz$elm_graphics$Text$concat(
-			{
-				ctor: '::',
-				_0: _evancz$elm_graphics$Text$fromString('\"'),
-				_1: {
-					ctor: '::',
-					_0: _evancz$elm_graphics$Text$fromString(string),
-					_1: {
-						ctor: '::',
-						_0: _evancz$elm_graphics$Text$fromString('\"'),
-						_1: {
-							ctor: '::',
-							_0: _evancz$elm_graphics$Text$fromString(' - Smash Mouth'),
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			}));
-};
-var _elm_lang$elm_architecture_tutorial$IntroDialog$smashMouthQuote = _evancz$elm_graphics$Element$toHtml(
-	_evancz$elm_graphics$Element$leftAligned(
-		_elm_lang$elm_architecture_tutorial$IntroDialog$myText('My worlds on fire, how about yours?')));
-var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
+var _elm_lang$elm_architecture_tutorial$Poultry$source4 = _elm_lang$html$Html_Attributes$href('http://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf');
+var _elm_lang$elm_architecture_tutorial$Poultry$source3 = _elm_lang$html$Html_Attributes$href('http://www.nationalchickencouncil.org/about-the-industry/statistics/per-capita-consumption-of-poultry-and-livestock-1965-to-estimated-2012-in-pounds/');
+var _elm_lang$elm_architecture_tutorial$Poultry$source2 = _elm_lang$html$Html_Attributes$href('http://shrinkthatfootprint.com/calculate-your-carbon-footprint');
+var _elm_lang$elm_architecture_tutorial$Poultry$source1 = _elm_lang$html$Html_Attributes$href('http://www.earthontheedge.com/how-much-co2-are-you-emitting/');
+var _elm_lang$elm_architecture_tutorial$Poultry$endingText = A2(
 	_elm_lang$html$Html$div,
 	{ctor: '[]'},
 	{
@@ -9867,25 +9944,15 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 			{ctor: '[]'},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('The world is currently facing a global convergence of seven different crises, but perhaps the most well-known and public crisis is climate change. The environmental crisis has been slowly growing in magnitude over the last century, mostly in part to the increase in industrial agriculture and other globalized practices. Industrial agriculture promotes monocropping (the farming of one or two main crops on a farming system), pesticide and fertilizer use, fossil fuel consumption, and anthropocentrism (the belief that humans are superiour to nature), all of which have contributed to a state of environmental degredation, the likes of which humanity has not seen. '),
+				_0: _elm_lang$html$Html$text('Hopefully after interacting witht this webpage, you have discovered that animal products cause serious harm to the environment in the form of carbon emissions, not even including other factors such as water runoff, land grabbing, etc. The issue of climate change and the environmental crisis is many-faceted and cannot be attributed to one root cause. However, a simple action every consumer can take is to consume fewer animal products. By switching from an average American diet to a vegetarian diet that still includes dairy, you can save around 661 pounds of C02 equivalents a year. If you switch to a vegan diet, you can save about 1542 pounds of C02 equivalents each year! That\'s a lot! It may seem challenging at the beginning, but trying to cut down the number of days you eat meat a week by 1, say from 5 days to 4 days, can be the first step towards reducing your animal product carbon footprint altogether.'),
 				_1: {ctor: '[]'}
 			}),
 		_1: {
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$div,
+				_elm_lang$html$Html$hr,
 				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _evancz$elm_graphics$Element$toHtml(
-						A4(
-							_evancz$elm_graphics$Element$container,
-							736,
-							414,
-							_evancz$elm_graphics$Element$middle,
-							A3(_evancz$elm_graphics$Element$image, 736, 414, 'world-fire.jpeg'))),
-					_1: {ctor: '[]'}
-				}),
+				{ctor: '[]'}),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -9894,150 +9961,98 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 					{
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$blockquote,
-							{ctor: '[]'},
+							_elm_lang$html$Html$a,
 							{
 								ctor: '::',
-								_0: _elm_lang$elm_architecture_tutorial$IntroDialog$smashMouthQuote,
+								_0: _elm_lang$elm_architecture_tutorial$Poultry$source1,
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Link to the info for how much C02e you can save from switching to vegetarian/vegan diets.'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
 					}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$a,
+								{
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$Poultry$source2,
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Link to the calculations I used to calculate carbon emissions.'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$a,
+									{
+										ctor: '::',
+										_0: _elm_lang$elm_architecture_tutorial$Poultry$source3,
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Link to the data for the average American meat consumption.'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$a,
+										{
+											ctor: '::',
+											_0: _elm_lang$elm_architecture_tutorial$Poultry$source4,
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Link to great information about the carbon emissions from many different types of food, not just animal products.'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
 			}
 		}
 	});
-var _elm_lang$elm_architecture_tutorial$IntroDialog$view = _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg;
-var _elm_lang$elm_architecture_tutorial$IntroDialog$Style = F6(
-	function (a, b, c, d, e, f) {
-		return {typeface: a, height: b, color: c, bold: d, italic: e, line: f};
-	});
-
-var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode$field, 'keyCode', _elm_lang$core$Json_Decode$int);
-var _elm_lang$html$Html_Events$targetChecked = A2(
-	_elm_lang$core$Json_Decode$at,
-	{
-		ctor: '::',
-		_0: 'target',
-		_1: {
-			ctor: '::',
-			_0: 'checked',
-			_1: {ctor: '[]'}
-		}
-	},
-	_elm_lang$core$Json_Decode$bool);
-var _elm_lang$html$Html_Events$targetValue = A2(
-	_elm_lang$core$Json_Decode$at,
-	{
-		ctor: '::',
-		_0: 'target',
-		_1: {
-			ctor: '::',
-			_0: 'value',
-			_1: {ctor: '[]'}
-		}
-	},
-	_elm_lang$core$Json_Decode$string);
-var _elm_lang$html$Html_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
-var _elm_lang$html$Html_Events$onWithOptions = _elm_lang$virtual_dom$VirtualDom$onWithOptions;
-var _elm_lang$html$Html_Events$on = _elm_lang$virtual_dom$VirtualDom$on;
-var _elm_lang$html$Html_Events$onFocus = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'focus',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onBlur = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'blur',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onSubmitOptions = _elm_lang$core$Native_Utils.update(
-	_elm_lang$html$Html_Events$defaultOptions,
-	{preventDefault: true});
-var _elm_lang$html$Html_Events$onSubmit = function (msg) {
-	return A3(
-		_elm_lang$html$Html_Events$onWithOptions,
-		'submit',
-		_elm_lang$html$Html_Events$onSubmitOptions,
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onCheck = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'change',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetChecked));
-};
-var _elm_lang$html$Html_Events$onInput = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'input',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetValue));
-};
-var _elm_lang$html$Html_Events$onMouseOut = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseout',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseOver = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseover',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseLeave = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseleave',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseEnter = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseenter',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseUp = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseup',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseDown = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mousedown',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onDoubleClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'dblclick',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'click',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$Options = F2(
-	function (a, b) {
-		return {stopPropagation: a, preventDefault: b};
-	});
-
-var _elm_lang$elm_architecture_tutorial$Dialog$emptyText = _evancz$elm_graphics$Element$toHtml(_evancz$elm_graphics$Element$empty);
-var _elm_lang$elm_architecture_tutorial$Dialog$addSadCow = A3(_evancz$elm_graphics$Element$image, 125, 193, 'sadCow.jpg');
-var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
+var _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken = A3(_evancz$elm_graphics$Element$image, 210, 210, 'sadChicken.jpeg');
+var _elm_lang$elm_architecture_tutorial$Poultry$chickens = function (model) {
 	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 3) < 0) ? A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
 			_0: _evancz$elm_graphics$Element$toHtml(
-				A3(_evancz$elm_graphics$Element$image, 270, 270, 'happyCow.jpeg')),
+				A3(_evancz$elm_graphics$Element$image, 260, 254, 'happyChicken.png')),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -10045,7 +10060,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Yah, you\'re eating no meat! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!'),
+						_0: _elm_lang$html$Html$text('Yah, you\'re eating no poultry! Imagine all the chickens and turkeys who are thanking you, not to mention the planet, which you are helping to save by consuming less poultry!'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -10055,7 +10070,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Dialog$addSadCow),
+			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Poultry$addSadChicken),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -10063,7 +10078,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('You\'re still eating meat, but more or less the amount the average American eats, so don\'t think you\'re an outlier. You are average (but I think you can be better than average!).'),
+						_0: _elm_lang$html$Html$text('You\'re still eating poultry, but more or less the amount the average American eats, so don\'t think you\'re an outlier. You are average (but I think you can be better than average!).'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -10079,10 +10094,10 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					_evancz$elm_graphics$Element$right,
 					{
 						ctor: '::',
-						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 							_1: {ctor: '[]'}
 						}
 					})),
@@ -10093,7 +10108,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Ooh, you are eating more meat than the average American conumes. The cows aren\'t too pleased, and neither is the planet.'),
+						_0: _elm_lang$html$Html$text('Ooh, you are eating more poultry than the average American conumes. The chickens and turkeys aren\'t too pleased, and neither is the planet.'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -10109,13 +10124,13 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					_evancz$elm_graphics$Element$right,
 					{
 						ctor: '::',
-						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+								_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 								_1: {ctor: '[]'}
 							}
 						}
@@ -10127,7 +10142,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Oh man you really like you\'re meat, don\'t you? I strongly suggest cutting back, not only for the sake of the planet, but for the sake of your health. Red meat isn\'t all that good for you.'),
+						_0: _elm_lang$html$Html$text('Oh man you really like you\'re poultry, don\'t you? I strongly suggest cutting back, because even though poultry is generally healthier than red meat, vegetables are still much better, especially for the planet.'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -10143,16 +10158,16 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					_evancz$elm_graphics$Element$right,
 					{
 						ctor: '::',
-						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+								_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+									_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
 									_1: {ctor: '[]'}
 								}
 							}
@@ -10165,7 +10180,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Wow, you are eating about 4x as much meat as the average American. The planet and your health are really suffering. Turn back now!'),
+						_0: _elm_lang$html$Html$text('Wow, you are eating about 4x as much poultry as the average American. The planet is really suffering. Turn back now!'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -10184,14 +10199,14 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Good thing we all don\'t eat as much as you. You are eating 5x the amount of meat as the average American. If every American ate this much meat, there wouldn\'t be enough space on Earth to sustain us. Reconsider your choices.'),
+						_0: _elm_lang$html$Html$text('Good thing we all don\'t eat as much as you. You are eating 5x the amount of poultry as the average American. If every American ate this much poultry, there wouldn\'t be enough space on Earth to sustain us. Reconsider your choices.'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
 			}
 		})))));
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
+var _elm_lang$elm_architecture_tutorial$Poultry$makePar = function (words) {
 	return A2(
 		_elm_lang$html$Html$p,
 		{ctor: '[]'},
@@ -10201,50 +10216,50 @@ var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcKilos = function (poundToKilo) {
+var _elm_lang$elm_architecture_tutorial$Poultry$calcKilos = function (poundToKilo) {
 	return _elm_lang$core$Basics$toFloat(poundToKilo) / 0.453592;
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss = function (poundOfMeat) {
+var _elm_lang$elm_architecture_tutorial$Poultry$calcWhiteMeatEmiss = function (poundOfWhiteMeat) {
 	return _elm_lang$core$Basics$round(
-		((((_elm_lang$elm_architecture_tutorial$Dialog$calcKilos(poundOfMeat) / 30.44) * 1435) * 365) * (27 / 1435)) * 2.20462);
+		((((_elm_lang$elm_architecture_tutorial$Poultry$calcKilos(poundOfWhiteMeat) / 30.44) * 1716.5) * 365) * (17.8 / 1716.5)) * 2.20462);
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcTons = function (tons) {
+var _elm_lang$elm_architecture_tutorial$Poultry$calcTons = function (tons) {
 	return _elm_lang$core$Basics$round(
 		_elm_lang$core$Basics$toFloat(
-			_elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss(tons)) * 5.0e-4);
+			_elm_lang$elm_architecture_tutorial$Poultry$calcWhiteMeatEmiss(tons)) * 5.0e-4);
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
+var _elm_lang$elm_architecture_tutorial$Poultry$calcVal = function (sliderVal) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$elm_architecture_tutorial$Dialog$makePar(
+			_0: _elm_lang$elm_architecture_tutorial$Poultry$makePar(
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					'For red meat, if you eat ',
+					'For white meat, if you eat ',
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						_elm_lang$core$Basics$toString(sliderVal),
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							' pound(s) a month, your yearly red meat C02e emissions would be ',
+							' pound(s) a month, your yearly white meat C02e emissions would be ',
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								_elm_lang$core$Basics$toString(
-									_elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss(sliderVal)),
+									_elm_lang$elm_architecture_tutorial$Poultry$calcWhiteMeatEmiss(sliderVal)),
 								A2(
 									_elm_lang$core$Basics_ops['++'],
 									' lbs C02e, or approximately ',
 									A2(
 										_elm_lang$core$Basics_ops['++'],
 										_elm_lang$core$Basics$toString(
-											_elm_lang$elm_architecture_tutorial$Dialog$calcTons(sliderVal)),
-										' tons of C02e per year.'))))))),
+											_elm_lang$elm_architecture_tutorial$Poultry$calcTons(sliderVal)),
+										' tons C02e per year.'))))))),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$sup,
+					_elm_lang$html$Html$sub,
 					{ctor: '[]'},
 					{
 						ctor: '::',
@@ -10255,8 +10270,8 @@ var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
 			}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
-	var val = _elm_lang$elm_architecture_tutorial$Dialog$calcVal(model.currentVal);
+var _elm_lang$elm_architecture_tutorial$Poultry$bodyUpdate = function (model) {
+	var val = _elm_lang$elm_architecture_tutorial$Poultry$calcVal(model.currentVal);
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -10266,9 +10281,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$sliderMax = _elm_lang$html$Html_Attributes$max('50');
-var _elm_lang$elm_architecture_tutorial$Dialog$sliderMin = _elm_lang$html$Html_Attributes$max('0');
-var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
+var _elm_lang$elm_architecture_tutorial$Poultry$update = F2(
 	function (num, model) {
 		var _p0 = num;
 		return _elm_lang$core$Native_Utils.update(
@@ -10280,86 +10293,92 @@ var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
 					_elm_lang$core$String$toInt(_p0._0))
 			});
 	});
-var _elm_lang$elm_architecture_tutorial$Dialog$initialModel = {currentVal: 0};
-var _elm_lang$elm_architecture_tutorial$Dialog$Model = function (a) {
+var _elm_lang$elm_architecture_tutorial$Poultry$initialModel = {currentVal: 0};
+var _elm_lang$elm_architecture_tutorial$Poultry$Model = function (a) {
 	return {currentVal: a};
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$ChangeSlider = function (a) {
+var _elm_lang$elm_architecture_tutorial$Poultry$ChangeSlider = function (a) {
 	return {ctor: 'ChangeSlider', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
+var _elm_lang$elm_architecture_tutorial$Poultry$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$elm_architecture_tutorial$IntroDialog$view,
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
 			_1: {
 				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$hr,
-					{ctor: '[]'},
-					{ctor: '[]'}),
+				_0: _elm_lang$elm_architecture_tutorial$Poultry$bodyUpdate(model),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate(model),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$input,
-									{
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('range'),
+									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$type_('range'),
+										_0: _elm_lang$html$Html_Attributes$min('0'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$elm_architecture_tutorial$Dialog$sliderMin,
+											_0: _elm_lang$html$Html_Attributes$max('50'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$elm_architecture_tutorial$Dialog$sliderMax,
+												_0: _elm_lang$html$Html_Attributes$value(
+													_elm_lang$core$Basics$toString(model.currentVal)),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$value(
-														_elm_lang$core$Basics$toString(model.currentVal)),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Dialog$ChangeSlider),
-														_1: {ctor: '[]'}
-													}
+													_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Poultry$ChangeSlider),
+													_1: {ctor: '[]'}
 												}
 											}
 										}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(
-										_elm_lang$core$Basics$toString(model.currentVal)),
-									_1: {ctor: '[]'}
-								}
-							}),
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.currentVal)),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$chickens(model),
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$cows(model),
+							_0: A2(
+								_elm_lang$html$Html$hr,
+								{ctor: '[]'},
+								{ctor: '[]'}),
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$div,
+									_elm_lang$html$Html$hr,
 									{ctor: '[]'},
-									{
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$hr,
+										{ctor: '[]'},
+										{ctor: '[]'}),
+									_1: {
 										ctor: '::',
-										_0: _elm_lang$elm_architecture_tutorial$Dialog$emptyText,
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$elm_architecture_tutorial$Dialog$emptyText,
-											_1: {ctor: '[]'}
-										}
-									}),
-								_1: {ctor: '[]'}
+										_0: _elm_lang$elm_architecture_tutorial$Poultry$endingText,
+										_1: {ctor: '[]'}
+									}
+								}
 							}
 						}
 					}
@@ -10367,17 +10386,17 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 			}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$main = _elm_lang$html$Html$beginnerProgram(
+var _elm_lang$elm_architecture_tutorial$Poultry$main = _elm_lang$html$Html$beginnerProgram(
 	{
 		model: {currentVal: 9},
-		view: _elm_lang$elm_architecture_tutorial$Dialog$view,
-		update: _elm_lang$elm_architecture_tutorial$Dialog$update
+		view: _elm_lang$elm_architecture_tutorial$Poultry$view,
+		update: _elm_lang$elm_architecture_tutorial$Poultry$update
 	})();
 
 var Elm = {};
-Elm['Dialog'] = Elm['Dialog'] || {};
-if (typeof _elm_lang$elm_architecture_tutorial$Dialog$main !== 'undefined') {
-    _elm_lang$elm_architecture_tutorial$Dialog$main(Elm['Dialog'], 'Dialog', undefined);
+Elm['Poultry'] = Elm['Poultry'] || {};
+if (typeof _elm_lang$elm_architecture_tutorial$Poultry$main !== 'undefined') {
+    _elm_lang$elm_architecture_tutorial$Poultry$main(Elm['Poultry'], 'Poultry', undefined);
 }
 
 if (typeof define === "function" && define['amd'])

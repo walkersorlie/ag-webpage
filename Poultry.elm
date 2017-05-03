@@ -39,7 +39,7 @@ update : Msg -> Model -> Model
 update num model =
   case num of
     ChangeSlider v ->
-      { model | currentVal = String.toInt v |> Result.withDefault 0 } -- currentVal is the number of the slider
+      { model | currentVal = String.toInt v |> Result.withDefault 0 }
 
 
 {-
@@ -64,6 +64,10 @@ view model =
         ,  text <| toString model.currentVal
       ]
       , chickens model
+      , hr [] []
+      , hr [] []
+      , hr [] []
+      , endingText
     ]
 
 {-
@@ -169,6 +173,64 @@ chickens model =
       [ Element.toHtml (Element.image 250 250 "deadEarth.jpg")
       , p [] [ text "Good thing we all don't eat as much as you. You are eating 5x the amount of poultry as the average American. If every American ate this much poultry, there wouldn't be enough space on Earth to sustain us. Reconsider your choices." ]
       ]
+
+
+{-
+  Ending paragraph to that proposes a simple solution for everyone to take
+  http://www.earthontheedge.com/how-much-co2-are-you-emitting/
+  http://www.nationalchickencouncil.org/about-the-industry/statistics/per-capita-consumption-of-poultry-and-livestock-1965-to-estimated-2012-in-pounds/
+  http://shrinkthatfootprint.com/calculate-your-carbon-footprint
+-}
+endingText : Html msg
+endingText =
+  div []
+    [ p [] [ text "Hopefully after interacting witht this webpage, you have discovered that animal products cause serious harm to the environment in the form of carbon emissions, not even including other factors such as water runoff, land grabbing, etc. The issue of climate change and the environmental crisis is many-faceted and cannot be attributed to one root cause. However, a simple action every consumer can take is to consume fewer animal products. By switching from an average American diet to a vegetarian diet that still includes dairy, you can save around 661 pounds of C02 equivalents a year. If you switch to a vegan diet, you can save about 1542 pounds of C02 equivalents each year! That's a lot! It may seem challenging at the beginning, but trying to cut down the number of days you eat meat a week by 1, say from 5 days to 4 days, can be the first step towards reducing your animal product carbon footprint altogether." ]
+    , hr [] []
+    , div []
+        [ a [ source1 ] [ text "Link to the info for how much C02e you can save from switching to vegetarian/vegan diets." ]
+        ]
+    , div []
+        [ a [ source2 ] [ text "Link to the calculations I used to calculate carbon emissions." ]
+        ]
+    , div []
+        [ a [ source3 ] [text "Link to the data for the average American meat consumption." ]
+        ]
+    , div []
+        [ a [ source4 ] [ text "Link to great information about the carbon emissions from many different types of food, not just animal products." ]
+        ]
+    ]
+
+
+{-
+  Source link
+-}
+source1 : Html.Attribute msg
+source1 =
+  href "http://www.earthontheedge.com/how-much-co2-are-you-emitting/"
+
+
+{-
+  Source link
+-}
+source2 : Html.Attribute msg
+source2 =
+  href "http://shrinkthatfootprint.com/calculate-your-carbon-footprint"
+
+
+{-
+  Source link
+-}
+source3 : Html.Attribute msg
+source3 =
+  href "http://www.nationalchickencouncil.org/about-the-industry/statistics/per-capita-consumption-of-poultry-and-livestock-1965-to-estimated-2012-in-pounds/"
+
+
+{-
+  Source link
+-}
+source4 : Html.Attribute msg
+source4 =
+  href "http://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf"
 
 
 {-

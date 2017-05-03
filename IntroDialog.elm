@@ -69,11 +69,16 @@ smashMouthQuote =
 nonChangeMsg : Html msg
 nonChangeMsg =
   div []
-      [ p [] [ text "The world is currently facing a global convergence of crises, and perhaps the most well-known crises is that of the environment." ]
+      [ p [] [ text "The world is currently facing a global convergence of seven different crises, but perhaps the most well-known and public crisis is climate change. The environmental crisis has been slowly growing in magnitude over the last century, mostly in part to the increase in industrial agriculture and other globalized practices. Industrial agriculture promotes monocropping (the farming of one or two main crops on a farming system), pesticide and fertilizer use, fossil fuel consumption, and anthropocentrism (the belief that humans are superiour to nature), all of which have contributed to a state of environmental degredation, the likes of which humanity has not seen. " ]
       , div []
           [ Element.toHtml (Element.container 736 414 middle (Element.image 736 414 "world-fire.jpeg"))
           ]
       , div []
           [ blockquote [] [ smashMouthQuote ]
           ]
+      , hr [] []
+      , div []
+          [ p [] [ text "Lets take a loot at three different sectors of the animal products industry: meat, dairy, and poultry. These are the three biggest hydrocarbon emitters that fall under the animal product banner."]
+          ]
+      , hr [] []
       ]

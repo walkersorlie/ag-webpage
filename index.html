@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="author" content="Walker Sorlie">
 
-    <title>The Impacts of the Meat Industry</title>
+    <title>The Impacts of the Animal Products Industry</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="/home/walker/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -22,25 +22,31 @@
   <body>
     <div class="container">
       <div class="starter-template">
-        <h1>The Impacts of the Meat Industry</h1>
+        <h1>The Impacts of the Animal Products Industry</h1>
         <p class="lead">Discussion of industrial agriculture.<br>
           <br>
-          <div id="dialog-here"></div>
-          <div id="dialog2-here"></div>
+          <div id="redMeat-here"></div>
+          <div id="dairy-here"></div>
+          <div id="poultry-here"></div>
         </p>
 <!--        <script type="text/javascript">Elm.Dialog.fullscreen()</script>   -->
       </div>
 
     </div><!-- /.container -->
 
-    <script src="dialog.js"></script>
+    <script src="redMeat.js"></script>
     <script>
-      Elm.Dialog.embed(document.getElementById("dialog-here"));
+      Elm.RedMeat.embed(document.getElementById("redMeat-here"));
     </script>
 
-    <script src="dialog2.js"></script>
+    <script src="dairy.js"></script>
     <script>
-      Elm.Dialog2.embed(document.getElementById("dialog2-here"));
+      Elm.Dairy.embed(document.getElementById("dairy-here"));
+    </script>
+
+    <script src="poultry.js"></script>
+    <script>
+      Elm.Poultry.embed(document.getElementById("poultry-here"));
     </script>
 
     <!-- Bootstrap core JavaScript

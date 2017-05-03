@@ -41,7 +41,7 @@ update : Msg -> Model -> Model
 update num model =
   case num of
     ChangeSlider v ->
-      { model | currentVal = String.toInt v |> Result.withDefault 0 } -- currentVal is the number of the slider
+      { model | currentVal = String.toInt v |> Result.withDefault 0 }
 
 
 {-

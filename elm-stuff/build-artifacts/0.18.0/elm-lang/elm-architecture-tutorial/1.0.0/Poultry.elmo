@@ -1,0 +1,462 @@
+var _elm_lang$elm_architecture_tutorial$Poultry$source4 = _elm_lang$html$Html_Attributes$href('http://static.ewg.org/reports/2011/meateaters/pdf/methodology_ewg_meat_eaters_guide_to_health_and_climate_2011.pdf');
+var _elm_lang$elm_architecture_tutorial$Poultry$source3 = _elm_lang$html$Html_Attributes$href('http://www.nationalchickencouncil.org/about-the-industry/statistics/per-capita-consumption-of-poultry-and-livestock-1965-to-estimated-2012-in-pounds/');
+var _elm_lang$elm_architecture_tutorial$Poultry$source2 = _elm_lang$html$Html_Attributes$href('http://shrinkthatfootprint.com/calculate-your-carbon-footprint');
+var _elm_lang$elm_architecture_tutorial$Poultry$source1 = _elm_lang$html$Html_Attributes$href('http://www.earthontheedge.com/how-much-co2-are-you-emitting/');
+var _elm_lang$elm_architecture_tutorial$Poultry$endingText = A2(
+	_elm_lang$html$Html$div,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$p,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Hopefully after interacting witht this webpage, you have discovered that animal products cause serious harm to the environment in the form of carbon emissions, not even including other factors such as water runoff, land grabbing, etc. The issue of climate change and the environmental crisis is many-faceted and cannot be attributed to one root cause. However, a simple action every consumer can take is to consume fewer animal products. By switching from an average American diet to a vegetarian diet that still includes dairy, you can save around 661 pounds of C02 equivalents a year. If you switch to a vegan diet, you can save about 1542 pounds of C02 equivalents each year! That\'s a lot! It may seem challenging at the beginning, but trying to cut down the number of days you eat meat a week by 1, say from 5 days to 4 days, can be the first step towards reducing your animal product carbon footprint altogether.'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$a,
+							{
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Poultry$source1,
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Link to the info for how much C02e you can save from switching to vegetarian/vegan diets.'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$a,
+								{
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$Poultry$source2,
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Link to the calculations I used to calculate carbon emissions.'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$a,
+									{
+										ctor: '::',
+										_0: _elm_lang$elm_architecture_tutorial$Poultry$source3,
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Link to the data for the average American meat consumption.'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$a,
+										{
+											ctor: '::',
+											_0: _elm_lang$elm_architecture_tutorial$Poultry$source4,
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Link to great information about the carbon emissions from many different types of food, not just animal products.'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	});
+var _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken = A3(_evancz$elm_graphics$Element$image, 210, 210, 'sadChicken.jpeg');
+var _elm_lang$elm_architecture_tutorial$Poultry$chickens = function (model) {
+	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 3) < 0) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 260, 254, 'happyChicken.png')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Yah, you\'re eating no poultry! Imagine all the chickens and turkeys who are thanking you, not to mention the planet, which you are helping to save by consuming less poultry!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(3, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 12) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Poultry$addSadChicken),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('You\'re still eating poultry, but more or less the amount the average American eats, so don\'t think you\'re an outlier. You are average (but I think you can be better than average!).'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(12, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 21) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Ooh, you are eating more poultry than the average American conumes. The chickens and turkeys aren\'t too pleased, and neither is the planet.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(21, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 31) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+								_1: {ctor: '[]'}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Oh man you really like you\'re poultry, don\'t you? I strongly suggest cutting back, because even though poultry is generally healthier than red meat, vegetables are still much better, especially for the planet.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(31, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 41) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$Poultry$addSadChicken,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Wow, you are eating about 4x as much poultry as the average American. The planet is really suffering. Turn back now!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 250, 250, 'deadEarth.jpg')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Good thing we all don\'t eat as much as you. You are eating 5x the amount of poultry as the average American. If every American ate this much poultry, there wouldn\'t be enough space on Earth to sustain us. Reconsider your choices.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		})))));
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$makePar = function (words) {
+	return A2(
+		_elm_lang$html$Html$p,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(words),
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$calcKilos = function (poundToKilo) {
+	return _elm_lang$core$Basics$toFloat(poundToKilo) / 0.453592;
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$calcWhiteMeatEmiss = function (poundOfWhiteMeat) {
+	return _elm_lang$core$Basics$round(
+		((((_elm_lang$elm_architecture_tutorial$Poultry$calcKilos(poundOfWhiteMeat) / 30.44) * 1716.5) * 365) * (17.8 / 1716.5)) * 2.20462);
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$calcTons = function (tons) {
+	return _elm_lang$core$Basics$round(
+		_elm_lang$core$Basics$toFloat(
+			_elm_lang$elm_architecture_tutorial$Poultry$calcWhiteMeatEmiss(tons)) * 5.0e-4);
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$calcVal = function (sliderVal) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$elm_architecture_tutorial$Poultry$makePar(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'For white meat, if you eat ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(sliderVal),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' pound(s) a month, your yearly white meat C02e emissions would be ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$elm_architecture_tutorial$Poultry$calcWhiteMeatEmiss(sliderVal)),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									' lbs C02e, or approximately ',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(
+											_elm_lang$elm_architecture_tutorial$Poultry$calcTons(sliderVal)),
+										' tons C02e per year.'))))))),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$sub,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('(The total emissions includes production emissions and post-production emissions.)'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$bodyUpdate = function (model) {
+	var val = _elm_lang$elm_architecture_tutorial$Poultry$calcVal(model.currentVal);
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: val,
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$update = F2(
+	function (num, model) {
+		var _p0 = num;
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				currentVal: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					_elm_lang$core$String$toInt(_p0._0))
+			});
+	});
+var _elm_lang$elm_architecture_tutorial$Poultry$initialModel = {currentVal: 0};
+var _elm_lang$elm_architecture_tutorial$Poultry$Model = function (a) {
+	return {currentVal: a};
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$ChangeSlider = function (a) {
+	return {ctor: 'ChangeSlider', _0: a};
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$elm_architecture_tutorial$Poultry$bodyUpdate(model),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('range'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$min('0'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$max('50'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$value(
+													_elm_lang$core$Basics$toString(model.currentVal)),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Poultry$ChangeSlider),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.currentVal)),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Poultry$chickens(model),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$hr,
+								{ctor: '[]'},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$hr,
+									{ctor: '[]'},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$hr,
+										{ctor: '[]'},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$elm_architecture_tutorial$Poultry$endingText,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Poultry$main = _elm_lang$html$Html$beginnerProgram(
+	{
+		model: {currentVal: 9},
+		view: _elm_lang$elm_architecture_tutorial$Poultry$view,
+		update: _elm_lang$elm_architecture_tutorial$Poultry$update
+	})();

@@ -1,0 +1,416 @@
+var _elm_lang$elm_architecture_tutorial$Dairy$addSadCow = A3(_evancz$elm_graphics$Element$image, 125, 193, 'sadCow.jpg');
+var _elm_lang$elm_architecture_tutorial$Dairy$cows = function (model) {
+	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 4) < 0) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: A3(_evancz$elm_graphics$Element$image, 270, 270, 'happyCow.jpeg'),
+						_1: {
+							ctor: '::',
+							_0: A3(_evancz$elm_graphics$Element$image, 270, 270, 'happyCow.jpeg'),
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Yah, you\'re consuming almost no dairy! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(4, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 10) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 270, 270, 'happyCow.jpeg')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Congrats, you\'re consuming much less dairy than the average American! Keep up the good work, and continue reducing your dairy consumption!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(10, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 20) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Dairy$addSadCow),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('You\'re still eating meat, but more or less the amount the average American eats, so don\'t think you\'re an outlier. You are average (but I think you can be better than average!).'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(12, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 21) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Ooh, you are eating more meat than the average American conumes. The cows aren\'t too pleased, and neither is the planet.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(21, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 31) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+								_1: {ctor: '[]'}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Oh man you really like you\'re meat, don\'t you? I strongly suggest cutting back, not only for the sake of the planet, but for the sake of your health. Red meat isn\'t all that good for you.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(31, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 41) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$Dairy$addSadCow,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Wow, you are eating about 4x as much meat as the average American. The planet and your health are really suffering. Turn back now!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 250, 250, 'deadEarth.jpg')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Good thing we all don\'t eat as much as you. You are eating 5x the amount of meat as the average American. If every American ate this much meat, there wouldn\'t be enough space on Earth to sustain us. Reconsider your choices.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}))))));
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$makePar = function (words) {
+	return A2(
+		_elm_lang$html$Html$p,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(words),
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcKilos = function (poundToKilo) {
+	return _elm_lang$core$Basics$toFloat(poundToKilo) / 0.453592;
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcMilk = function (kilos) {
+	return (((kilos / 30.44) * 422) * 365) * (1.9 / 422);
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcYogurt = function (kilos) {
+	return (((kilos / 30.44) * 588) * 365) * (2.2 / 588);
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcCheese = function (kilos) {
+	return (((kilos / 30.44) * 4036) * 365) * (13.5 / 4036);
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcDairy = function (pounds) {
+	return _elm_lang$core$Basics$round(
+		((_elm_lang$elm_architecture_tutorial$Dairy$calcCheese(
+			_elm_lang$elm_architecture_tutorial$Dairy$calcKilos(pounds)) + _elm_lang$elm_architecture_tutorial$Dairy$calcYogurt(
+			_elm_lang$elm_architecture_tutorial$Dairy$calcKilos(pounds))) + _elm_lang$elm_architecture_tutorial$Dairy$calcMilk(
+			_elm_lang$elm_architecture_tutorial$Dairy$calcKilos(pounds))) * 2.20462);
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcTons = function (tons) {
+	return _elm_lang$core$Basics$round(
+		_elm_lang$core$Basics$toFloat(
+			_elm_lang$elm_architecture_tutorial$Dairy$calcDairy(tons)) * 5.0e-4);
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$followingText = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$elm_architecture_tutorial$Dairy$makePar(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'Ok, so now that we looked at dairy and you saw that if you consume ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(model.currentVal),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' pounds of dairy a month, you create ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$elm_architecture_tutorial$Dairy$calcTons(model.currentVal)),
+								' tons of C02 equivalents a year. Now, lets look at chicken to see what kind of impact your poultry consumption has on the environment.'))))),
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$calcVal = function (sliderVal) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$elm_architecture_tutorial$Dairy$makePar(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'The average American consumes about 209 lb of dairy a year, or on average 17 lb a month. For dairy, if you consume ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(sliderVal),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' pound(s) a month, your yearly dairy C02e emissions would be ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$elm_architecture_tutorial$Dairy$calcDairy(sliderVal)),
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									' lbs C02e, or approximately ',
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_elm_lang$core$Basics$toString(
+											_elm_lang$elm_architecture_tutorial$Dairy$calcTons(sliderVal)),
+										' tons of C02e per year.'))))))),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$sup,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('(The total emissions includes production emissions and post-production emissions.)'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$bodyUpdate = function (model) {
+	var val = _elm_lang$elm_architecture_tutorial$Dairy$calcVal(model.currentVal);
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: val,
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$myStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'backgroundColor', _1: 'red'},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'height', _1: '90px'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'width', _1: '100%'},
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _elm_lang$elm_architecture_tutorial$Dairy$sliderMax = _elm_lang$html$Html_Attributes$max('50');
+var _elm_lang$elm_architecture_tutorial$Dairy$sliderMin = _elm_lang$html$Html_Attributes$max('0');
+var _elm_lang$elm_architecture_tutorial$Dairy$update = F2(
+	function (num, model) {
+		var _p0 = num;
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				currentVal: A2(
+					_elm_lang$core$Result$withDefault,
+					0,
+					_elm_lang$core$String$toInt(_p0._0))
+			});
+	});
+var _elm_lang$elm_architecture_tutorial$Dairy$initialModel = {currentVal: 0};
+var _elm_lang$elm_architecture_tutorial$Dairy$Model = function (a) {
+	return {currentVal: a};
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$ChangeSlider = function (a) {
+	return {ctor: 'ChangeSlider', _0: a};
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$elm_architecture_tutorial$Dairy$bodyUpdate(model),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('range'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$elm_architecture_tutorial$Dairy$sliderMin,
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$elm_architecture_tutorial$Dairy$sliderMax,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$value(
+													_elm_lang$core$Basics$toString(model.currentVal)),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Dairy$ChangeSlider),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.currentVal)),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dairy$cows(model),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$hr,
+								{ctor: '[]'},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dairy$followingText(model),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$Dairy$main = _elm_lang$html$Html$beginnerProgram(
+	{
+		model: {currentVal: 17},
+		view: _elm_lang$elm_architecture_tutorial$Dairy$view,
+		update: _elm_lang$elm_architecture_tutorial$Dairy$update
+	})();

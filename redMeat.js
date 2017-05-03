@@ -9903,7 +9903,39 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 							}),
 						_1: {ctor: '[]'}
 					}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$hr,
+						{ctor: '[]'},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$p,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Lets take a loot at three different sectors of the animal products industry: meat, dairy, and poultry. These are the three biggest hydrocarbon emitters that fall under the animal product banner.'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$hr,
+								{ctor: '[]'},
+								{ctor: '[]'}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
 			}
 		}
 	});
@@ -10028,9 +10060,8 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _elm_lang$elm_architecture_tutorial$Dialog$emptyText = _evancz$elm_graphics$Element$toHtml(_evancz$elm_graphics$Element$empty);
-var _elm_lang$elm_architecture_tutorial$Dialog$addSadCow = A3(_evancz$elm_graphics$Element$image, 125, 193, 'sadCow.jpg');
-var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow = A3(_evancz$elm_graphics$Element$image, 125, 193, 'sadCow.jpg');
+var _elm_lang$elm_architecture_tutorial$RedMeat$cows = function (model) {
 	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 3) < 0) ? A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -10045,7 +10076,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Yah, you\'re eating no meat! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!'),
+						_0: _elm_lang$html$Html$text('Yah, you\'re eating barely any meat, if any at all! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!'),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -10055,7 +10086,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Dialog$addSadCow),
+			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$RedMeat$addSadCow),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -10079,10 +10110,10 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					_evancz$elm_graphics$Element$right,
 					{
 						ctor: '::',
-						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 							_1: {ctor: '[]'}
 						}
 					})),
@@ -10109,13 +10140,13 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					_evancz$elm_graphics$Element$right,
 					{
 						ctor: '::',
-						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+								_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 								_1: {ctor: '[]'}
 							}
 						}
@@ -10143,16 +10174,16 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 					_evancz$elm_graphics$Element$right,
 					{
 						ctor: '::',
-						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+								_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+									_0: _elm_lang$elm_architecture_tutorial$RedMeat$addSadCow,
 									_1: {ctor: '[]'}
 								}
 							}
@@ -10191,7 +10222,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
 			}
 		})))));
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$makePar = function (words) {
 	return A2(
 		_elm_lang$html$Html$p,
 		{ctor: '[]'},
@@ -10201,28 +10232,52 @@ var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcKilos = function (poundToKilo) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$calcKilos = function (poundToKilo) {
 	return _elm_lang$core$Basics$toFloat(poundToKilo) / 0.453592;
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss = function (poundOfMeat) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$calcRedMeatEmiss = function (poundOfMeat) {
 	return _elm_lang$core$Basics$round(
-		((((_elm_lang$elm_architecture_tutorial$Dialog$calcKilos(poundOfMeat) / 30.44) * 1435) * 365) * (27 / 1435)) * 2.20462);
+		((((_elm_lang$elm_architecture_tutorial$RedMeat$calcKilos(poundOfMeat) / 30.44) * 1435) * 365) * (27 / 1435)) * 2.20462);
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcTons = function (tons) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$calcTons = function (tons) {
 	return _elm_lang$core$Basics$round(
 		_elm_lang$core$Basics$toFloat(
-			_elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss(tons)) * 5.0e-4);
+			_elm_lang$elm_architecture_tutorial$RedMeat$calcRedMeatEmiss(tons)) * 5.0e-4);
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$followingText = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$elm_architecture_tutorial$Dialog$makePar(
+			_0: _elm_lang$elm_architecture_tutorial$RedMeat$makePar(
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					'For red meat, if you eat ',
+					'Ok, so now that we looked at red meat and you saw that if you eat ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(model.currentVal),
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							' pounds of meat a month, you create ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(
+									_elm_lang$elm_architecture_tutorial$RedMeat$calcTons(model.currentVal)),
+								' tons of C02 equivalents a year. Now, lets look at dairy to see what kind of impact your dairy consumption has on the environment.'))))),
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$RedMeat$calcVal = function (sliderVal) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$elm_architecture_tutorial$RedMeat$makePar(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'The average American eats about 106 lb of red meat a year, or on average 9 lb a month. For red meat, if you eat ',
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						_elm_lang$core$Basics$toString(sliderVal),
@@ -10232,14 +10287,14 @@ var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								_elm_lang$core$Basics$toString(
-									_elm_lang$elm_architecture_tutorial$Dialog$calcRedMeatEmiss(sliderVal)),
+									_elm_lang$elm_architecture_tutorial$RedMeat$calcRedMeatEmiss(sliderVal)),
 								A2(
 									_elm_lang$core$Basics_ops['++'],
 									' lbs C02e, or approximately ',
 									A2(
 										_elm_lang$core$Basics_ops['++'],
 										_elm_lang$core$Basics$toString(
-											_elm_lang$elm_architecture_tutorial$Dialog$calcTons(sliderVal)),
+											_elm_lang$elm_architecture_tutorial$RedMeat$calcTons(sliderVal)),
 										' tons of C02e per year.'))))))),
 			_1: {
 				ctor: '::',
@@ -10255,8 +10310,8 @@ var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
 			}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
-	var val = _elm_lang$elm_architecture_tutorial$Dialog$calcVal(model.currentVal);
+var _elm_lang$elm_architecture_tutorial$RedMeat$bodyUpdate = function (model) {
+	var val = _elm_lang$elm_architecture_tutorial$RedMeat$calcVal(model.currentVal);
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -10266,9 +10321,23 @@ var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
 			_1: {ctor: '[]'}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$sliderMax = _elm_lang$html$Html_Attributes$max('50');
-var _elm_lang$elm_architecture_tutorial$Dialog$sliderMin = _elm_lang$html$Html_Attributes$max('0');
-var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
+var _elm_lang$elm_architecture_tutorial$RedMeat$myStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'backgroundColor', _1: 'red'},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'height', _1: '90px'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'width', _1: '100%'},
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _elm_lang$elm_architecture_tutorial$RedMeat$sliderMax = _elm_lang$html$Html_Attributes$max('50');
+var _elm_lang$elm_architecture_tutorial$RedMeat$sliderMin = _elm_lang$html$Html_Attributes$max('0');
+var _elm_lang$elm_architecture_tutorial$RedMeat$update = F2(
 	function (num, model) {
 		var _p0 = num;
 		return _elm_lang$core$Native_Utils.update(
@@ -10280,14 +10349,14 @@ var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
 					_elm_lang$core$String$toInt(_p0._0))
 			});
 	});
-var _elm_lang$elm_architecture_tutorial$Dialog$initialModel = {currentVal: 0};
-var _elm_lang$elm_architecture_tutorial$Dialog$Model = function (a) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$initialModel = {currentVal: 0};
+var _elm_lang$elm_architecture_tutorial$RedMeat$Model = function (a) {
 	return {currentVal: a};
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$ChangeSlider = function (a) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$ChangeSlider = function (a) {
 	return {ctor: 'ChangeSlider', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
+var _elm_lang$elm_architecture_tutorial$RedMeat$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -10302,7 +10371,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 					{ctor: '[]'}),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate(model),
+					_0: _elm_lang$elm_architecture_tutorial$RedMeat$bodyUpdate(model),
 					_1: {
 						ctor: '::',
 						_0: A2(
@@ -10317,17 +10386,17 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 										_0: _elm_lang$html$Html_Attributes$type_('range'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$elm_architecture_tutorial$Dialog$sliderMin,
+											_0: _elm_lang$elm_architecture_tutorial$RedMeat$sliderMin,
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$elm_architecture_tutorial$Dialog$sliderMax,
+												_0: _elm_lang$elm_architecture_tutorial$RedMeat$sliderMax,
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$value(
 														_elm_lang$core$Basics$toString(model.currentVal)),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$Dialog$ChangeSlider),
+														_0: _elm_lang$html$Html_Events$onInput(_elm_lang$elm_architecture_tutorial$RedMeat$ChangeSlider),
 														_1: {ctor: '[]'}
 													}
 												}
@@ -10344,22 +10413,18 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 							}),
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$elm_architecture_tutorial$Dialog$cows(model),
+							_0: _elm_lang$elm_architecture_tutorial$RedMeat$cows(model),
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$div,
+									_elm_lang$html$Html$hr,
 									{ctor: '[]'},
-									{
-										ctor: '::',
-										_0: _elm_lang$elm_architecture_tutorial$Dialog$emptyText,
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$elm_architecture_tutorial$Dialog$emptyText,
-											_1: {ctor: '[]'}
-										}
-									}),
-								_1: {ctor: '[]'}
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$RedMeat$followingText(model),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}
@@ -10367,17 +10432,17 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 			}
 		});
 };
-var _elm_lang$elm_architecture_tutorial$Dialog$main = _elm_lang$html$Html$beginnerProgram(
+var _elm_lang$elm_architecture_tutorial$RedMeat$main = _elm_lang$html$Html$beginnerProgram(
 	{
 		model: {currentVal: 9},
-		view: _elm_lang$elm_architecture_tutorial$Dialog$view,
-		update: _elm_lang$elm_architecture_tutorial$Dialog$update
+		view: _elm_lang$elm_architecture_tutorial$RedMeat$view,
+		update: _elm_lang$elm_architecture_tutorial$RedMeat$update
 	})();
 
 var Elm = {};
-Elm['Dialog'] = Elm['Dialog'] || {};
-if (typeof _elm_lang$elm_architecture_tutorial$Dialog$main !== 'undefined') {
-    _elm_lang$elm_architecture_tutorial$Dialog$main(Elm['Dialog'], 'Dialog', undefined);
+Elm['RedMeat'] = Elm['RedMeat'] || {};
+if (typeof _elm_lang$elm_architecture_tutorial$RedMeat$main !== 'undefined') {
+    _elm_lang$elm_architecture_tutorial$RedMeat$main(Elm['RedMeat'], 'RedMeat', undefined);
 }
 
 if (typeof define === "function" && define['amd'])

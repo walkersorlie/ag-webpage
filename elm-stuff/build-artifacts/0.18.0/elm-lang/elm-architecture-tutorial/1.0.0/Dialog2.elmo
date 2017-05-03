@@ -1,3 +1,4 @@
+var _elm_lang$elm_architecture_tutorial$Dialog2$emptyText = _evancz$elm_graphics$Element$toHtml(_evancz$elm_graphics$Element$empty);
 var _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken = A3(_evancz$elm_graphics$Element$image, 210, 210, 'sadChicken.jpeg');
 var _elm_lang$elm_architecture_tutorial$Dialog2$chickens = function (model) {
 	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 3) < 0) ? A2(
@@ -309,7 +310,11 @@ var _elm_lang$elm_architecture_tutorial$Dialog2$view = function (model) {
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$elm_architecture_tutorial$Dialog2$chickens(model),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog2$emptyText,
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}

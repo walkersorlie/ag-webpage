@@ -1,4 +1,4 @@
-module RedMeat exposing (main)
+module Dairy exposing (main)
 
 import IntroDialog exposing (view)
 import Html exposing (..)
@@ -30,7 +30,7 @@ type alias Model  =
 -}
 initialModel : Model
 initialModel =
-  { currentVal = 0 }    -- maybe start the slider at the American average consumption
+  { currentVal = 0 }
 
 
 {-
@@ -41,7 +41,7 @@ update : Msg -> Model -> Model
 update num model =
   case num of
     ChangeSlider v ->
-      { model | currentVal = String.toInt v |> Result.withDefault 0 } -- currentVal is the number of the slider
+      { model | currentVal = String.toInt v |> Result.withDefault 0 } 
 
 
 {-
@@ -75,8 +75,7 @@ myStyle =
 view : Model -> Html Msg
 view model =
   div []
-    [ IntroDialog.view
-    , hr [] []
+    [ hr [] []
     , bodyUpdate model
     , div []
       [ input
@@ -94,37 +93,56 @@ view model =
     ]
 
 
-{-
-  Red meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-  Kilogram to pound is 'x * 2.20462'
-  Average days a month is 30.44
-
-  Include info about how it's hard to get an exact number
--}
 calcVal : Int -> Html msg
 calcVal sliderVal =
   div []
-    [ makePar ("The average American eats about 106 lb of red meat a year, or on average 9 lb a month. For red meat, if you eat " ++ toString sliderVal ++ " pound(s) a month, your yearly red meat C02e emissions would be " ++ toString (calcRedMeatEmiss sliderVal) ++ " lbs C02e, or approximately " ++ toString (calcTons sliderVal) ++ " tons of C02e per year.")
+    [ makePar ("The average American consumes about 209 lb of dairy a year, or on average 17 lb a month. For dairy, if you consume " ++ toString sliderVal ++ " pound(s) a month, your yearly dairy C02e emissions would be " ++ toString (calcDairy sliderVal) ++ " lbs C02e, or approximately " ++ toString (calcTons sliderVal) ++ " tons of C02e per year.")
     , sup [] [ text "(The total emissions includes production emissions and post-production emissions.)" ]
     ]
 
 
 {-
+  Calculates the total emissions from dairy (cheese, yogurt, and milk)
+  Returns the anser in pounds
+-}
+calcDairy: Int -> Int
+calcDairy pounds =
+  round ((calcCheese (calcKilos (pounds)) + (calcYogurt (calcKilos pounds)) + (calcMilk (calcKilos pounds))) * 2.20462)
+
+
+{-
+  Calculates the emissions from cheese
+  Returns the answer in kilograms
+-}
+calcCheese : Float -> Float
+calcCheese kilos =
+  (kilos / 30.44) * 4036 * 365 * (13.5 / 4036)
+
+
+{-
+  Calculates the emissions from yogurt
+  Returns the answer in kilograms
+-}
+calcYogurt : Float -> Float
+calcYogurt kilos=
+  (kilos / 30.44) * 588 * 365 * (2.2 / 588)
+
+
+{-
+  Calculates the emissions from milk
+  Returns the answer in kilograms
+-}
+calcMilk : Float -> Float
+calcMilk kilos =
+  (kilos / 30.44) * 422 * 365 * (1.9 / 422)
+
+
+{-
   Converts pounds to kilograms
-  Rounds to the nearest whole number
 -}
 calcKilos : Int -> Float
 calcKilos poundToKilo  =
   (toFloat poundToKilo / 0.453592)
-
-
-{-
-  This calculates the carbon emission of red meat
-  Returns the total in pounds
--}
-calcRedMeatEmiss : Int -> Int
-calcRedMeatEmiss poundOfMeat =
-  round (((calcKilos (poundOfMeat) / 30.44) * 1435 * 365 * (27/1435)) * 2.20462)
 
 
 {-
@@ -133,8 +151,7 @@ calcRedMeatEmiss poundOfMeat =
 -}
 calcTons : Int -> Int
 calcTons tons =
-  round ((toFloat (calcRedMeatEmiss tons)) * 0.0005)
-
+  round ((toFloat (calcDairy tons)) * 0.0005)
 
 {-
   Creates a paragraph HTML header to pass to bodyUpdate
@@ -172,12 +189,18 @@ addSadCow =
 -}
 cows : Model -> Html msg
 cows model =
-  if (model.currentVal < 3) then
+  if (model.currentVal < 4) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [ Element.image 270 270 "happyCow.jpeg", Element.image 270 270 "happyCow.jpeg" ])
+      , p [] [ text "Yah, you're consuming almost no dairy! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!" ]
+      ]
+  else if ((4 <= model.currentVal) && (model.currentVal < 10)) then
     div []
       [ Element.toHtml (Element.image 270 270 "happyCow.jpeg")
-      , p [] [ text "Yah, you're eating barely any meat, if any at all! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!" ]
+      , p [] [ text "Congrats, you're consuming much less dairy than the average American! Keep up the good work, and continue reducing your dairy consumption!" ]
       ]
-  else if ((3 <= model.currentVal) && (model.currentVal < 12)) then
+
+  else if ((10 <= model.currentVal) && (model.currentVal < 20)) then
     div []
       [ Element.toHtml addSadCow
       , p [] [ text "You're still eating meat, but more or less the amount the average American eats, so don't think you're an outlier. You are average (but I think you can be better than average!)." ]
@@ -207,16 +230,16 @@ cows model =
 followingText : Model -> Html msg
 followingText model =
   div []
-    [ makePar ("Ok, so now that we looked at red meat and you saw that if you eat " ++ toString model.currentVal ++ " pounds of meat a month, you create " ++ toString (calcTons model.currentVal) ++ " tons of C02 equivalents a year. Now, lets look at dairy to see what kind of impact your dairy consumption has on the environment.")
+    [ makePar ("Ok, so now that we looked at dairy and you saw that if you consume " ++ toString model.currentVal ++ " pounds of dairy a month, you create " ++ toString (calcTons model.currentVal) ++ " tons of C02 equivalents a year. Now, lets look at poultry to see what kind of impact your poultry consumption has on the environment.")
     ]
 
 
 {-
-  Runs RedMeat.elm, with the slider starting at the value '9'
+  Runs Dairy.elm, with the slider starting at the value '9'
 -}
 main =
   Html.beginnerProgram
-    { model = { currentVal = 9 }
+    { model = { currentVal = 17 }
     , view = view
     , update = update
     }
