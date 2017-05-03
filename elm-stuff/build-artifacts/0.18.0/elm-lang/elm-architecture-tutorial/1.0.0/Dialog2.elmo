@@ -1,3 +1,165 @@
+var _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken = A3(_evancz$elm_graphics$Element$image, 210, 210, 'sadChicken.jpeg');
+var _elm_lang$elm_architecture_tutorial$Dialog2$chickens = function (model) {
+	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 3) < 0) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 260, 254, 'happyChicken.png')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Yah, you\'re eating no poultry! Imagine all the chickens and turkeys who are thanking you, not to mention the planet, which you are helping to save by consuming less poultry!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(3, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 12) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('You\'re still eating poultry, but more or less the amount the average American eats, so don\'t think you\'re an outlier. You are average (but I think you can be better than average!).'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(12, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 21) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Ooh, you are eating more poultry than the average American conumes. The chickens and turkeys aren\'t too pleased, and neither is the planet.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(21, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 31) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+								_1: {ctor: '[]'}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Oh man you really like you\'re poultry, don\'t you? I strongly suggest cutting back, because even though poultry is generally healthier than red meat, vegetables are still much better, especially for the planet.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(31, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 41) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$Dialog2$addSadChicken,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Wow, you are eating about 4x as much poultry as the average American. The planet is really suffering. Turn back now!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 250, 250, 'deadEarth.jpg')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Good thing we all don\'t eat as much as you. You are eating 5x the amount of poultry as the average American. If every American ate this much poultry, there wouldn\'t be enough space on Earth to sustain us. Reconsider your choices.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		})))));
+};
 var _elm_lang$elm_architecture_tutorial$Dialog2$makePar = function (words) {
 	return A2(
 		_elm_lang$html$Html$p,
@@ -144,14 +306,18 @@ var _elm_lang$elm_architecture_tutorial$Dialog2$view = function (model) {
 								_1: {ctor: '[]'}
 							}
 						}),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog2$chickens(model),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
 };
 var _elm_lang$elm_architecture_tutorial$Dialog2$main = _elm_lang$html$Html$beginnerProgram(
 	{
-		model: {currentVal: 0},
+		model: {currentVal: 9},
 		view: _elm_lang$elm_architecture_tutorial$Dialog2$view,
 		update: _elm_lang$elm_architecture_tutorial$Dialog2$update
 	})();

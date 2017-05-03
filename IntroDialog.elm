@@ -16,11 +16,9 @@ view =
 
 
 {-
-type alias Element =
-  Text
+  Alias for Style
+  Used to create custom styles
 -}
-
-
 type alias Style =
   { typeface : List String
   , height : Maybe Float
@@ -50,7 +48,11 @@ myStyle =
 -}
 myText : String -> Text
 myText string =
-  Text.style myStyle (fromString string)
+  Text.style myStyle (concat [ fromString "\""
+                            , fromString string
+                            , fromString "\""
+                            , fromString " - Smash Mouth"
+                            ] )
 
 
 {-
@@ -69,7 +71,7 @@ nonChangeMsg =
   div []
       [ p [] [ text "The world is currently facing a global convergence of crises, and perhaps the most well-known crises is that of the environment." ]
       , div []
-          [ Element.toHtml (Element.image 736 414 "world-fire.jpeg")
+          [ Element.toHtml (Element.container 736 414 middle (Element.image 736 414 "world-fire.jpeg"))
           ]
       , div []
           [ blockquote [] [ smashMouthQuote ]

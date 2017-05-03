@@ -18,7 +18,24 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$myText = function (string) {
 	return A2(
 		_evancz$elm_graphics$Text$style,
 		_elm_lang$elm_architecture_tutorial$IntroDialog$myStyle,
-		_evancz$elm_graphics$Text$fromString(string));
+		_evancz$elm_graphics$Text$concat(
+			{
+				ctor: '::',
+				_0: _evancz$elm_graphics$Text$fromString('\"'),
+				_1: {
+					ctor: '::',
+					_0: _evancz$elm_graphics$Text$fromString(string),
+					_1: {
+						ctor: '::',
+						_0: _evancz$elm_graphics$Text$fromString('\"'),
+						_1: {
+							ctor: '::',
+							_0: _evancz$elm_graphics$Text$fromString(' - Smash Mouth'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}));
 };
 var _elm_lang$elm_architecture_tutorial$IntroDialog$smashMouthQuote = _evancz$elm_graphics$Element$toHtml(
 	_evancz$elm_graphics$Element$leftAligned(
@@ -44,7 +61,12 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 				{
 					ctor: '::',
 					_0: _evancz$elm_graphics$Element$toHtml(
-						A3(_evancz$elm_graphics$Element$image, 736, 414, 'world-fire.jpeg')),
+						A4(
+							_evancz$elm_graphics$Element$container,
+							736,
+							414,
+							_evancz$elm_graphics$Element$middle,
+							A3(_evancz$elm_graphics$Element$image, 736, 414, 'world-fire.jpeg'))),
 					_1: {ctor: '[]'}
 				}),
 			_1: {

@@ -4,7 +4,7 @@ import IntroDialog exposing (view)
 import Html exposing (..)
 import Html.Attributes as HAtt exposing (..)
 import Html.Events exposing (on, onInput)
-import Element
+import Element exposing (..)
 import String
 
 
@@ -151,7 +151,7 @@ bodyUpdate model =
 
 
 {-
-  Creates an HTML msg of a sad cows
+  Creates an HTML msg of a sad cow
 -}
 addSadCow : Element.Element
 addSadCow =

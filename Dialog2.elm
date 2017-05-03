@@ -3,6 +3,7 @@ module Dialog2 exposing (main)
 import Html exposing (..)
 import Html.Attributes as H exposing (..)
 import Html.Events exposing (on, onInput)
+import Element exposing (..)
 import String
 
 
@@ -62,6 +63,7 @@ view model =
         ] []
         ,  text <| toString model.currentVal
       ]
+      , chickens model
     ]
 
 {-
@@ -113,9 +115,7 @@ makePar words =
 
 
 {-
-  Represents the text area that will be updated.
-  Attempt to update the body text with the new model.
-  Have something similar down below, just trying something else here
+  Represents the text area that will be updated depending on the value of the slider
 -}
 bodyUpdate : Model -> Html msg
 bodyUpdate model =
@@ -126,23 +126,54 @@ bodyUpdate model =
       [ val
       ]
 
+{-
+  Creates an HTML msg of a sad chicken
+-}
+addSadChicken : Element.Element
+addSadChicken =
+    Element.image 210 210 "sadChicken.jpeg"
+
 
 {-
-  Don't think I use this
-
-bodyText : Model -> Html msg
-bodyText model =
-  let val =
-    calcVal model.currentVal
-  in
-    div []
-      [ p [] [ text "Changed text here. Equations to come." ]
-      ]
+  Adds pictures (and accompanying text) of either a happy chicken, sad chickens, or a dead planet depending on what the slider value is
 -}
+chickens : Model -> Html msg
+chickens model =
+  if (model.currentVal < 3) then
+    div []
+      [ Element.toHtml (Element.image 260 254 "happyChicken.png")
+      , p [] [ text "Yah, you're eating no poultry! Imagine all the chickens and turkeys who are thanking you, not to mention the planet, which you are helping to save by consuming less poultry!" ]
+      ]
+  else if ((3 <= model.currentVal) && (model.currentVal < 12)) then
+    div []
+      [ Element.toHtml addSadChicken
+      , p [] [ text "You're still eating poultry, but more or less the amount the average American eats, so don't think you're an outlier. You are average (but I think you can be better than average!)." ]
+      ]
+  else if ((12 <= model.currentVal) && (model.currentVal < 21)) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [addSadChicken, addSadChicken])
+      , p [] [ text "Ooh, you are eating more poultry than the average American conumes. The chickens and turkeys aren't too pleased, and neither is the planet." ]
+      ]
+  else if ((21 <= model.currentVal) && (model.currentVal < 31)) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [addSadChicken, addSadChicken, addSadChicken])
+      , p [] [ text "Oh man you really like you're poultry, don't you? I strongly suggest cutting back, because even though poultry is generally healthier than red meat, vegetables are still much better, especially for the planet." ]
+      ]
+  else if ((31 <= model.currentVal) && (model.currentVal < 41)) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [addSadChicken, addSadChicken, addSadChicken, addSadChicken])
+      , p [] [ text "Wow, you are eating about 4x as much poultry as the average American. The planet is really suffering. Turn back now!" ]
+      ]
+  else
+    div []
+      [ Element.toHtml (Element.image 250 250 "deadEarth.jpg")
+      , p [] [ text "Good thing we all don't eat as much as you. You are eating 5x the amount of poultry as the average American. If every American ate this much poultry, there wouldn't be enough space on Earth to sustain us. Reconsider your choices." ]
+      ]
+
 
 main =
   Html.beginnerProgram
-    { model = { currentVal = 0 }
+    { model = { currentVal = 9 }
     , view = view
     , update = update
     }
