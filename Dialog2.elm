@@ -6,6 +6,9 @@ import Html.Events exposing (on, onInput)
 import String
 
 
+{-
+  The type of message the 'view' is expecting
+-}
 type Msg =
   ChangeSlider String
 

@@ -1,3 +1,165 @@
+var _elm_lang$elm_architecture_tutorial$Dialog$addSadCow = A3(_evancz$elm_graphics$Element$image, 125, 193, 'sadCow.jpg');
+var _elm_lang$elm_architecture_tutorial$Dialog$cows = function (model) {
+	return (_elm_lang$core$Native_Utils.cmp(model.currentVal, 3) < 0) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 270, 270, 'happyCow.jpeg')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Yah, you\'re eating no meat! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(3, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 12) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(_elm_lang$elm_architecture_tutorial$Dialog$addSadCow),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('You\'re still eating meat, but more or less the amount the average American eats, so don\'t think you\'re an outlier. You are average (but I think you can be better than average!).'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(12, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 21) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_1: {ctor: '[]'}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Ooh, you are eating more meat than the average American conumes. The cows aren\'t too pleased, and neither is the planet.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(21, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 31) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+								_1: {ctor: '[]'}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Oh man you really like you\'re meat, don\'t you? I strongly suggest cutting back, not only for the sake of the planet, but for the sake of your health. Red meat isn\'t all that good for you.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : (((_elm_lang$core$Native_Utils.cmp(31, model.currentVal) < 1) && (_elm_lang$core$Native_Utils.cmp(model.currentVal, 41) < 0)) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A2(
+					_evancz$elm_graphics$Element$flow,
+					_evancz$elm_graphics$Element$right,
+					{
+						ctor: '::',
+						_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$elm_architecture_tutorial$Dialog$addSadCow,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					})),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Wow, you are eating about 4x as much meat as the average American. The planet and your health are really suffering. Turn back now!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}) : A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _evancz$elm_graphics$Element$toHtml(
+				A3(_evancz$elm_graphics$Element$image, 250, 250, 'deadEarth.jpg')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Good thing we all don\'t eat as much as you. You are eating 5x the amount of meat as the average American. If every American ate this much meat, there wouldn\'t be enough space on Earth to sustain us. Reconsider your choices.'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		})))));
+};
 var _elm_lang$elm_architecture_tutorial$Dialog$makePar = function (words) {
 	return A2(
 		_elm_lang$html$Html$p,
@@ -47,11 +209,11 @@ var _elm_lang$elm_architecture_tutorial$Dialog$calcVal = function (sliderVal) {
 										_elm_lang$core$Basics_ops['++'],
 										_elm_lang$core$Basics$toString(
 											_elm_lang$elm_architecture_tutorial$Dialog$calcTons(sliderVal)),
-										' tons C02e per year.'))))))),
+										' tons of C02e per year.'))))))),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$sub,
+					_elm_lang$html$Html$sup,
 					{ctor: '[]'},
 					{
 						ctor: '::',
@@ -73,6 +235,8 @@ var _elm_lang$elm_architecture_tutorial$Dialog$bodyUpdate = function (model) {
 			_1: {ctor: '[]'}
 		});
 };
+var _elm_lang$elm_architecture_tutorial$Dialog$sliderMax = _elm_lang$html$Html_Attributes$max('50');
+var _elm_lang$elm_architecture_tutorial$Dialog$sliderMin = _elm_lang$html$Html_Attributes$max('0');
 var _elm_lang$elm_architecture_tutorial$Dialog$update = F2(
 	function (num, model) {
 		var _p0 = num;
@@ -122,10 +286,10 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 										_0: _elm_lang$html$Html_Attributes$type_('range'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$min('0'),
+											_0: _elm_lang$elm_architecture_tutorial$Dialog$sliderMin,
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$max('50'),
+												_0: _elm_lang$elm_architecture_tutorial$Dialog$sliderMax,
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$value(
@@ -147,7 +311,11 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 									_1: {ctor: '[]'}
 								}
 							}),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$elm_architecture_tutorial$Dialog$cows(model),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
@@ -155,7 +323,7 @@ var _elm_lang$elm_architecture_tutorial$Dialog$view = function (model) {
 };
 var _elm_lang$elm_architecture_tutorial$Dialog$main = _elm_lang$html$Html$beginnerProgram(
 	{
-		model: {currentVal: 0},
+		model: {currentVal: 9},
 		view: _elm_lang$elm_architecture_tutorial$Dialog$view,
 		update: _elm_lang$elm_architecture_tutorial$Dialog$update
 	})();

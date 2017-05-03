@@ -1,3 +1,28 @@
+var _elm_lang$elm_architecture_tutorial$IntroDialog$myStyle = {
+	typeface: {
+		ctor: '::',
+		_0: 'Times New Roman',
+		_1: {
+			ctor: '::',
+			_0: 'arial',
+			_1: {ctor: '[]'}
+		}
+	},
+	height: _elm_lang$core$Maybe$Just(17),
+	color: _elm_lang$core$Color$black,
+	bold: true,
+	italic: false,
+	line: _elm_lang$core$Maybe$Nothing
+};
+var _elm_lang$elm_architecture_tutorial$IntroDialog$myText = function (string) {
+	return A2(
+		_evancz$elm_graphics$Text$style,
+		_elm_lang$elm_architecture_tutorial$IntroDialog$myStyle,
+		_evancz$elm_graphics$Text$fromString(string));
+};
+var _elm_lang$elm_architecture_tutorial$IntroDialog$smashMouthQuote = _evancz$elm_graphics$Element$toHtml(
+	_evancz$elm_graphics$Element$leftAligned(
+		_elm_lang$elm_architecture_tutorial$IntroDialog$myText('My worlds on fire, how about yours?')));
 var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 	_elm_lang$html$Html$div,
 	{ctor: '[]'},
@@ -8,20 +33,43 @@ var _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg = A2(
 			{ctor: '[]'},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('I will display all intro info here. This stuff will not be affected by the slider.'),
+				_0: _elm_lang$html$Html$text('The world is currently facing a global convergence of crises, and perhaps the most well-known crises is that of the environment.'),
 				_1: {ctor: '[]'}
 			}),
 		_1: {
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$p,
+				_elm_lang$html$Html$div,
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('All numbers are rounded to the nearest whole number.'),
+					_0: _evancz$elm_graphics$Element$toHtml(
+						A3(_evancz$elm_graphics$Element$image, 736, 414, 'world-fire.jpeg')),
 					_1: {ctor: '[]'}
 				}),
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$blockquote,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$elm_architecture_tutorial$IntroDialog$smashMouthQuote,
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
 		}
 	});
 var _elm_lang$elm_architecture_tutorial$IntroDialog$view = _elm_lang$elm_architecture_tutorial$IntroDialog$nonChangeMsg;
+var _elm_lang$elm_architecture_tutorial$IntroDialog$Style = F6(
+	function (a, b, c, d, e, f) {
+		return {typeface: a, height: b, color: c, bold: d, italic: e, line: f};
+	});

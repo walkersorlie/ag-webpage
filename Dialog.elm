@@ -2,11 +2,15 @@ module Dialog exposing (main)
 
 import IntroDialog exposing (view)
 import Html exposing (..)
-import Html.Attributes as H exposing (..)
+import Html.Attributes as HAtt exposing (..)
 import Html.Events exposing (on, onInput)
+import Element
 import String
 
 
+{-
+  The type of message the 'view' is expecting
+-}
 type Msg =
   ChangeSlider String
 
@@ -25,7 +29,7 @@ type alias Model  =
 -}
 initialModel : Model
 initialModel =
-  { currentVal = 0 }
+  { currentVal = 0 }    -- maybe start the slider at the American average consumption
 
 
 {-
@@ -40,6 +44,22 @@ update num model =
 
 
 {-
+  Calculates the minimum value of the slider
+-}
+sliderMin : Attribute msg
+sliderMin =
+  HAtt.max "0"
+
+
+{-
+  Calculates the maximum value of the slider
+-}
+sliderMax : Attribute msg
+sliderMax =
+  HAtt.max "50"
+
+
+{-
   Represents the slider and the paragraph of text.
 
   Have IntroDialog, then a slider, then some text that wont change,
@@ -49,19 +69,21 @@ view : Model -> Html Msg
 view model =
   div []
     [ IntroDialog.view
-    , hr [] []
-    , bodyUpdate model 
+    ,hr [] []
+    , bodyUpdate model
     , div []
       [ input
         [ type_ "range"
-        , H.min "0"
-        , H.max "50"
+        , sliderMin
+        , sliderMax
         , value <| toString model.currentVal
         , onInput ChangeSlider
         ] []
         ,  text <| toString model.currentVal
       ]
+      , cows model
     ]
+
 
 {-
   Red meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
@@ -73,10 +95,9 @@ view model =
 calcVal : Int -> Html msg
 calcVal sliderVal =
   div []
-    [ makePar ("For red meat, if you eat " ++ toString sliderVal ++ " pound(s) a month, your yearly red meat C02e emissions would be " ++ toString (calcRedMeatEmiss sliderVal) ++ " lbs C02e, or approximately " ++ toString (calcTons sliderVal) ++ " tons C02e per year.")
-    , sub [] [ text "(The total emissions includes production emissions and post-production emissions.)" ]
+    [ makePar ("For red meat, if you eat " ++ toString sliderVal ++ " pound(s) a month, your yearly red meat C02e emissions would be " ++ toString (calcRedMeatEmiss sliderVal) ++ " lbs C02e, or approximately " ++ toString (calcTons sliderVal) ++ " tons of C02e per year.")
+    , sup [] [ text "(The total emissions includes production emissions and post-production emissions.)" ]
     ]
-
 
 
 {-
@@ -130,21 +151,53 @@ bodyUpdate model =
 
 
 {-
-  Don't think I use this
-
-bodyText : Model -> Html msg
-bodyText model =
-  let val =
-    calcVal model.currentVal
-  in
-    div []
-      [ p [] [ text "Changed text here. Equations to come." ]
-      ]
+  Creates an HTML msg of a sad cows
 -}
+addSadCow : Element.Element
+addSadCow =
+    Element.image 125 193 "sadCow.jpg"
+
+
+{-
+  Adds pictures (and accompanying text) of either a happy cow, sad cows, or a dead planet depending on what the slider value is
+-}
+cows : Model -> Html msg
+cows model =
+  if (model.currentVal < 3) then
+    div []
+      [ Element.toHtml (Element.image 270 270 "happyCow.jpeg")
+      , p [] [ text "Yah, you're eating no meat! Imagine all the cows who are thanking you, not to mention the planet, which you are helping to save by consuming less meat!" ]
+      ]
+  else if ((3 <= model.currentVal) && (model.currentVal < 12)) then
+    div []
+      [ Element.toHtml addSadCow
+      , p [] [ text "You're still eating meat, but more or less the amount the average American eats, so don't think you're an outlier. You are average (but I think you can be better than average!)." ]
+      ]
+  else if ((12 <= model.currentVal) && (model.currentVal < 21)) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [addSadCow, addSadCow])
+      , p [] [ text "Ooh, you are eating more meat than the average American conumes. The cows aren't too pleased, and neither is the planet." ]
+      ]
+  else if ((21 <= model.currentVal) && (model.currentVal < 31)) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [addSadCow, addSadCow, addSadCow])
+      , p [] [ text "Oh man you really like you're meat, don't you? I strongly suggest cutting back, not only for the sake of the planet, but for the sake of your health. Red meat isn't all that good for you." ]
+      ]
+  else if ((31 <= model.currentVal) && (model.currentVal < 41)) then
+    div []
+      [ Element.toHtml (Element.flow Element.right [addSadCow, addSadCow, addSadCow, addSadCow])
+      , p [] [ text "Wow, you are eating about 4x as much meat as the average American. The planet and your health are really suffering. Turn back now!" ]
+      ]
+  else
+    div []
+      [ Element.toHtml (Element.image 250 250 "deadEarth.jpg")
+      , p [] [ text "Good thing we all don't eat as much as you. You are eating 5x the amount of meat as the average American. If every American ate this much meat, there wouldn't be enough space on Earth to sustain us. Reconsider your choices." ]
+      ]
+
 
 main =
   Html.beginnerProgram
-    { model = { currentVal = 0 }
+    { model = { currentVal = 9 }
     , view = view
     , update = update
     }
